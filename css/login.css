@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #FFF7F0;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 20px;
+    background-color: #FFC857;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    display: block;
+    margin: 15px auto;
+}
+
+a {
+    text-decoration: none;
+    font-size: 12px;
+    margin: 5px;
+    display: inline-block;
+}
+
+.requisitos {
+    text-align: left;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.requisitos li {
+    color:  #FFD580;
+    margin-bottom: 5px;
+}
+
+.bg-rosa {
+    background-color: #F8A5C2;
+}
+
+.bg-azul {
+    background-color: #9AD0D3;
+}
+
+.bg-amarelo {
+    background-color: #FFD580;
+}
+
+.titulo-rosa {
+    color: #E4749B;
+}
+
+.titulo-azul {
+    color: #61AABF;
+}
+
+.titulo-amarelo {
+    color: #F2AC29;
+}
+
+.link-claro {
+    color: #FFC857;
+    font-size: 11px;
+}
+
+
+.input-estilo {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  display: inline-block;
+  border: none;
+  border-radius: 50px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #fff;
+  color: #787878;
+}
+
+.input-estilo:focus {
+  outline: none;
+  box-shadow: 0 0 5px #f3a5b0;
+}

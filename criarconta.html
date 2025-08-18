@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Conta</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="bg-azul">
+    <div class="container">
+        <h2 class="titulo-rosa">Criar uma conta</h2>
+        <form>
+             <input type="text" placeholder="Nome Completo" required>
+             <label for="tipoUsuario"></label>
+
+            <select id="tipoUsuario" name="tipoUsuario" class="input-estilo">
+                <option value="">Tipo de conta</option>
+                <option value="professor">Professor</option>
+                <option value="responsavel">Responsável</option>
+                <option value="estudante">Estudante</option>
+                </select>
+
+                <input type="text" placeholder="Usuário" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Senha" required>
+
+                <ul class="requisitos">
+                <li style="color:  #d24869;">Pelo menos uma letra maiúscula</li>
+                <li style="color:  #d24869;">Pelo menos uma letra minúscula</li>
+                <li style="color:  #d24869;">Pelo menos um algarismo</li>
+                <li style="color:  #d24869;">Mais do que 7 caracteres</li>
+                </ul>
+
+                <input type="password" placeholder="Confirme a Senha" required>
+
+                <button type="button" onclick="window.location.href='Perfil.html'">Criar</button>
+
+
+        
+       <a href="login.html" class="link-claro">Já tem uma conta? Entrar</a> 
+</div>
+    
+</body>
+</html> 

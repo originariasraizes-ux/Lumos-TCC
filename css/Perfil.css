@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fbf6ed;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-left: 250px; /* espaço fixo p/ sidebar */
+  transition: padding-left 0.3s ease;
+}
+
+/* CARD */
+.card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 2px 0 5px #ffa408;
+  width: 600px;
+  max-width: 95%;
+  text-align: center;
+}
+
+/* PERFIL */
+.profile-picture {
+  order: -1;
+  margin-bottom: 20px;
+}
+#profile .avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+#profile h2 {
+  margin: 5px 0;
+}
+#profile p {
+  color: #7f8c8d;
+  margin-bottom: 5px;
+}
+#profile button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #efa019;
+  color: white;
+}
+
+/* CONFIGURAÇÕES */
+#settings {
+  display: none;
+}
+#settings h2 {
+  color: #efa019;
+  margin-bottom: 10px;
+}
+.settings-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.form-left {
+  flex: 1;
+  text-align: left;  
+}
+.form-left label {
+  display: block;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.form-left input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.form-left .change {
+  color: #efa019;
+  font-size: 14px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.form-right {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+.form-right .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: auto;
+}
+.upload-btn {
+  background: #efa019;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.delete-account {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.delete-account a {
+  color: #9f6707;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+.delete-account p {
+  color: #7f8c8d;
+  font-size: 13px;
+  margin-top: 5px;
+}
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.btn-secondary {
+  background: #ecf0f1;
+  color: #efa019;
+}
+.btn-primary {
+  background: #efa019;
+  color: white;
+}
+.buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #fbf6ed;
+  padding: 20px;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  z-index: 100;
+  box-shadow: 2px 0 5px #ffa408;
+
+}
+.sidebar .logo img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.sidebar .navbar a {
+  display: block;
+  color: #efa019;
+  text-decoration: none;
+  padding: 10px 5px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s, background 0.3s;
+}
+.sidebar .navbar a:hover {
+  color: #d38600;
+}
+.sidebar .icons {
+  margin-top: 20px;
+  text-align: center;
+}
+.sidebar .icons .fas {
+  font-size: 24px;
+  color: #efa019;
+  cursor: pointer;
+}
+
+/* HAMBURGER PARA MOBILE */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 999;
+  background: #fbf6ed;
+  color: #efa019;
+  font-size: 24px;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  body {
+    padding-left: 0;
+  }
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  .hamburger {
+    display: block;
+  }
+  .settings-form {
+    flex-direction: column;
+    align-items: center;
+  }
+  .form-right {
+    width: 100%;
+  }
+}

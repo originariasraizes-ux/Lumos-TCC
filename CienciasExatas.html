@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Ciências Exatas</title>
+
+  <link rel="stylesheet" href="css/CienciasExatas.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="Homepage.html" class="logo">
+      <img src="images/Logos/LumosExatas.png" alt="Logo Lumos">
+    </a>
+
+    <nav class="navbar">
+      <a href="Homepage.html">Descubra</a>
+      <a href="CienciasNaturais.html">Ciências Naturais, Saúde e Meio Ambiente</a>
+      <a href="CienciasHumanas.html">Ciências Humanas e Letras</a>
+      <a href="CienciasExatas.html">Ciências Exatas</a>
+      <a href="IdiomasComunicacao.html">Idiomas e Comunicação</a>
+      <a href="#Dashboard">Dashboard</a>
+      <a href="#QuemSomos">Quem somos</a>
+    </nav>
+
+    <div class="icons">
+      <a href="login.html"><div class="fas fa-user"></div></a>
+      <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+  </header>
+
+  <!-- SECTION EXPLORANDO -->
+  <section class="Explorando">
+
+    <div class="lado-esquerdo">
+      <div class="texto-explorando">
+        <h1 class="league-spartan">Explorando o Mundo de Exatas</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+      </div>
+
+      <!-- BARRA DE PESQUISA -->
+      <div class="search-container">
+        <input type="text" placeholder="Buscar conteúdo..." class="search-input">
+        <button class="search-icon" title="Buscar">&#128269;</button>
+        <button class="filter-icon" onclick="toggleFilters()" title="Filtros">&#9881;</button>
+      </div>
+
+      <!-- FILTROS -->
+      <div id="filters" class="filters hidden">
+        <h3>Filtros</h3>
+        <div class="filter-list">
+          <div class="filter-option" onclick="toggleOption(this)">Ciências Naturais</div>
+          <div class="filter-option" onclick="toggleOption(this)">Saúde</div>
+          <div class="filter-option" onclick="toggleOption(this)">Meio Ambiente</div>
+          <div class="filter-option" onclick="toggleOption(this)">Ciências Humanas</div>
+          <div class="filter-option" onclick="toggleOption(this)">Letras</div>
+          <div class="filter-option" onclick="toggleOption(this)">Ciências Exatas</div>
+          <div class="filter-option" onclick="toggleOption(this)">Idiomas</div>
+          <div class="filter-option" onclick="toggleOption(this)">Comunicação</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="img-explorando">
+      <img src="images/jogos/gif exatas.gif" alt="Imagem Explorando">
+    </div>
+
+  </section>
+
+  <!-- IMAGEM CAPA DE JOGO -->
+ 
+ <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <img src="images/Logos/logoLumos.png" class="logo-footer">
+        <p style="color:#fff;">O aprendizado é a chave para o futuro. Continue explorando, descobrindo e se superando</p>
+      </div>
+
+      <div class="footer-col">
+        <h3 style="color: #fff;">Sobre nós</h3>
+        <ul>
+          <li><a href="Homepage.html">Home</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="Suporte.html">Contatos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 style="color:#fff;">Entre em Contato</h3>
+        <p style="color:#fff;">📍 Etec de Carapicuíba</p>
+        <p style="color:#fff;">✉️ Lumos@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+       <p style="color:#fff; text-align: center;">Copyright © 2025 Lumos</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+  <script src="js/Conhecimento.js"></script>
+</body>
+</html>
