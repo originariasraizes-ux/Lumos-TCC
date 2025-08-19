@@ -67,14 +67,30 @@ p {
   background: #fbf6ed;
   box-shadow: var(--box-shadow);
   position: relative;
+  
 }
 
 .header .logo img {
-  width: 200px;
-  height: auto;
+      height: auto;
+      width: 150px;
+      align-content: center;
+      margin-left: 40px;
+       margin-top: 15px; 
+
 }
 
+  .logo img{
+    width:110px;
+    height:auto;
+    margin-bottom:8px;
+  }
 
+    .logo {
+    width: 70px; /**negocio pra logo nao ficar pequena e nem atrás das palavras*/
+    position: relative;
+    z-index: 10;
+
+}
 .navbar {
   display: flex;
   justify-content: center;
@@ -103,7 +119,8 @@ p {
 #menu-btn {
   display: none;
 }
-
+.logo { width: auto !important; }
+.logo img { margin: 0 !important; }
 /* ===== SECTION EXPLORANDO ===== */
 .Explorando {
   display: flex;
@@ -309,6 +326,10 @@ footer {
 
   #menu-btn {
     display: inline-block;
+    right: 2rem; 
+  }
+.header {
+    position: relative; 
   }
 
   .header .navbar {
@@ -333,12 +354,16 @@ footer {
     
   }
  
-
- .header .logo img {
-  width: 200px;
-  height: auto;
-}
-
+ .header .logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+.header .logo img {
+    height: 60px;      /* ou width: 200px; height: auto; */
+    width: auto;
+  }
   .container {
     flex-direction: column;
     text-align: center;
@@ -364,11 +389,12 @@ footer {
   .filters {
     width: 90%;
   }
-  .header logo {
+  .header .logo {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 
 @media (max-width: 600px) {
