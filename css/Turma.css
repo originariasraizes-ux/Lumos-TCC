@@ -1,0 +1,111 @@
+body {
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background:#fbf6ed;
+}
+
+/* Sidebar */
+.sidebar {
+  position:fixed;
+  left:0; top:0;
+  width:250px; height:100%;
+  background:#fbf6ed;
+  padding:20px;
+  box-shadow: 3px 0 10px rgba(205,130,10,0.25);
+}
+.navbar a { display:block; color:#efa019; padding:10px; margin-bottom:8px; text-decoration:none; font-weight:600; }
+.navbar a.ativo { background:#efa019; color:#fff; border-radius:8px; }
+
+/* Main */
+.main {
+  margin-left:250px;
+  padding:40px;
+}
+
+/* Card da turma */
+.turma-card {
+  background:#ccc;
+  border-radius:20px;
+  padding:30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  min-height:300px;
+  color:#fff;
+}
+
+/* Texto */
+.turma-left {
+  flex:1;
+  padding-right:30px;
+}
+.turma-left h1 {
+  font-size:1.8rem;
+  margin-bottom:10px;
+}
+.turma-left p {
+  font-size:1rem;
+  margin-bottom:20px;
+}
+.turma-left .btn-criar {
+  background:#fff;
+  color:#333;
+  font-weight:600;
+  border:none;
+  padding:10px 20px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+/* Atividades */
+.atividades {
+  margin-top:15px;
+}
+.atividade {
+  background:rgba(255,255,255,0.2);
+  padding:8px 12px;
+  margin:6px 0;
+  border-radius:8px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.atividade span { font-weight:600; }
+.atividade button {
+  background:none;
+  border:none;
+  color:#fff;
+  margin-left:8px;
+  cursor:pointer;
+}
+
+/* Imagem */
+.turma-right {
+  max-width:35%;
+}
+.turma-right img {
+  width:100%;
+  border-radius:12px;
+}
+
+/* Bloco de convite */
+.convite {
+  background:rgba(255,255,255,0.2);
+  padding:14px;
+  border-radius:12px;
+  margin-top:20px;
+  font-weight:600;
+}
+.codigo {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:6px;
+}
+.codigo button {
+  background:none;
+  border:none;
+  color:white;
+  cursor:pointer;
+  font-size:16px;
+}
