@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calendário - Lumos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="Calendário.css" />
+</head>
+<body>
+  <button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <a href="Homepage.html" class="logo">
+      <img src="imagens/logoLumos.png" alt="Logo Lumos">
+    </a>
+    <nav class="navbar">
+      <a href="Dashboard.html">Início</a>
+      <a href="Calendário.html" class="ativo">Calendário</a>
+      <div class="submenu">
+        <span>📘 Turmas</span>
+        <div id="lista-turmas-sidebar"></div>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <header class="header">
+      <h2>Calendário</h2>
+    </header>
+
+    <section id="calendario-view">
+      <div class="navegacao">
+        <button id="prev">&lt;</button>
+        <span id="mes-ano"></span>
+        <button id="next">&gt;</button>
+      </div>
+      <table class="calendario">
+        <thead>
+          <tr>
+            <th>DOM</th><th>SEG</th><th>TER</th><th>QUA</th><th>QUI</th><th>SEX</th><th>SAB</th>
+          </tr>
+        </thead>
+        <tbody id="dias-container"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- MODAL SELEÇÃO TURMA -->
+  <div id="modal-turma" class="modal hidden">
+    <div class="modal-content">
+      <h3>Selecionar turma</h3>
+      <select id="turmaSelect"></select>
+      <div class="modal-buttons">
+        <button id="cancelar" class="btn-cancelar">Cancelar</button>
+        <button id="salvar" class="btn-confirmar">Salvar</button>
+        <button id="excluir-dia" class="btn-excluir" style="display:none">Excluir do dia</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="Calendário.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Turma - Lumos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="Turma.css" />
+</head>
+<body>
+  <button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <a href="Homepage.html" class="logo">
+      <img src="imagens/logoLumos.png" alt="Logo Lumos">
+    </a>
+    <nav class="navbar">
+      <a href="Dashboard.html">Início</a>
+      <a href="Calendário.html">Calendário</a>
+      <div class="submenu">
+        <span>📘 Turmas</span>
+        <div id="lista-turmas-sidebar"></div>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <section id="turma-card" class="turma-card">
+      <!-- Conteúdo será injetado pelo JS -->
+    </section>
+  </main>
+
+  <script src="Turma.js"></script>
+</body>
+</html>

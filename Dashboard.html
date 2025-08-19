@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="Dashboard.css">
+  <title>Perfil - Lumos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <a href="Homepage.html" class="logo">
+      <img src="imagens/logoLumos.png" alt="Logo Lumos">
+    </a>
+    <nav class="navbar">
+      <a href="Dashboard.html">Início</a>
+      <a href="Calendário.html">Calendário</a>
+      <div class="submenu">
+        <span>📘 Turmas</span>
+        <div id="lista-turmas-sidebar"></div>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <header class="header">
+      <button class="btn-criar-turma" id="abrirModal">+ Criar turma</button>
+      <div class="font-buttons">
+        <button id="btn-perfil" title="Perfil">👤</button>
+      </div>
+    </header>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard-view">
+      <div class="turmas" id="lista-turmas"></div>
+    </section>
+
+    <!-- TELA DE UMA TURMA -->
+    <section id="turma-view" style="display:none;">
+      <button id="btn-voltar" class="btn-voltar">← Voltar</button>
+      <div class="turma-card preview">
+        <div class="turma-top">
+          <h2 id="titulo-turma">Nome da Turma</h2>
+          <div class="card-icon">🌐</div>
+        </div>
+      </div>
+      <section class="sem-atividades">
+        <div class="mensagem">
+          <p><strong id="mensagem-turma">Nenhuma atividade foi programada ainda.</strong></p>
+          <img src="imagens/teste.png" alt="Sem atividades" />
+          <button class="btn-criar">+ Criar</button>
+        </div>
+        <div class="convite">
+          <p>Código de convite:</p>
+          <div class="codigo">
+            <span id="codigo-convite">—</span>
+            <button class="copiar" id="btn-copiar">📋</button>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- MODAL CRIAR TURMA -->
+  <div id="modal-nova-turma" class="modal hidden">
+    <div class="modal-content">
+      <h2>Criar turma</h2>
+      <label for="nomeTurma">Nome da turma</label>
+      <input type="text" id="nomeTurma" placeholder="Nome da turma" />
+      <label for="areaTurma">Área de conhecimento</label>
+      <select id="areaTurma">
+        <option disabled selected>Selecione uma área</option>
+        <option value="Linguagens">Linguagens</option>
+        <option value="Matemática">Matemática</option>
+        <option value="Ciências Humanas">Ciências Humanas</option>
+        <option value="Ciências da Natureza">Ciências da Natureza</option>
+      </select>
+      <div class="modal-buttons">
+        <button id="fecharModal" class="btn-cancelar">Cancelar</button>
+        <button id="criarTurma" class="btn-confirmar">Criar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS externo -->
+  <script src="Dashboard.js"></script>
+</body>
+</html>
