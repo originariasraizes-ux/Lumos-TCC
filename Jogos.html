@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogos</title>
-    <link rel="stylesheet" href="css/Jogos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="css/Jogos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
-    <header class="header">
-        <a href="lumos.html" class="logo"></a>
-        <img src="images/Logos/LumosCienciaNatural.png" width="180px">
- <nav class="navbar">
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="Homepage.html" class="logo">
+      <img src="images/Logos/LumosCienciaNatural.png"  width="180px" alt="Logo Lumos">
+    </a>
+
+    <nav class="navbar">
             <a href="Homepage.html">Descubra</a>
             <a href="CienciasNaturais.html">Ciências Naturais</a>
             <a href="CienciasHumanas.html">Ciências Humanas</a>
             <a href="CienciasExatas.html">Ciências Exatas</a>
             <a href="IdiomasComunicacao.html">Comunicação</a>
-            <a href="Dashboard.html">Dashboard</a>
-            <a href="QuemSomos.html">Quem somos</a>
+            <a href="#Dashboard">Dashboard</a>
+            <a href="#QuemSomos">Quem somos</a>
     </nav>
 
-        <div class="icons">
-            <a href="login.html">
-            <div class="fas fa-user" id="login-btn"></div>
-        </a>
-            <div class="fas fa-bars" id="menu-btn"></div>
-        </div>
-    </header>
-   
+    <div class="icons">
+      <a href="login.html"><div class="fas fa-user"></div></a>
+      <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+  </header>
+
 
  <section class="advinhePersonalidade">
     <h1 style="color: #2c646e;" class="league-spartan">Advinhe Quem é a Personalidade?</h1>
@@ -45,10 +46,13 @@
 <p style="color: #1e4d55;">Este jogo educativo foi desenvolvido para estimular o aprendizado de história de forma interativa e lúdica. Os alunos recebem pistas sobre figuras históricas importantes e devem identificar quem elas são, promovendo o raciocínio lógico, a interpretação de informações e a fixação de conteúdos. As pistas são organizadas de forma a respeitar diferentes níveis de dificuldade, permitindo que o jogo seja adequado para diversas faixas etárias e graus de conhecimento histórico. É uma ferramenta ideal para complementar aulas e engajar os alunos com curiosidades e fatos históricos relevantes.</p>
 
 
-
    </div>
+   
+ <button type="button" onclick="window.location.href='#'">Jogar</button>
     </section>
-    <footer>
+   
+ <!-- Footer -->
+  <footer>
     <div class="footer-container">
       <div class="footer-col">
         <img src="images/Logos/logoLumos.png" class="logo-footer">
@@ -77,11 +81,8 @@
     </div>
   </footer>
 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
-    <script src="js/Cienciasnaturais.js"></script>
-
-    <script>
-        lightGallery(document.querySelector('.gallery .gallery-container'));
-    </script>
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+  <script src="js/Conhecimento.js"></script>
 </body>
 </html>
