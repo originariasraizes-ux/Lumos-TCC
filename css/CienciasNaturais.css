@@ -8,6 +8,9 @@
   --white: #fff;
   --light-color: #666;
   --box-shadow: 0 .5rem 1.5rem #eee0c7;
+   --img-pad: 16px;     /* margem interna entre a imagem e as bordas do card */
+    --img-radius: 12px;  /* arredondamento da imagem */
+    --card-radius: 15px; /* arredondamento do card */
 }
 
 /* ===== CONFIGURAÇÕES GERAIS ===== */
@@ -121,12 +124,13 @@ p {
 }
 .logo img { margin-left: 40px; }        /* antes estava sem px */
 .header .logo {} 
+
 /* ===== SECTION EXPLORANDO ===== */
 .Explorando {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 50px 0 50px 7%;
+padding: 50px 0 50px 7%;
   flex-wrap: wrap;
 }
 
@@ -258,6 +262,129 @@ p {
   display: block;
   margin: 30px auto;
 }
+ /* GRID */
+/* ===== AJUSTES NO CARD-FUNDO ===== */
+.card-fundo {
+  justify-content: space-between;
+  flex: 1;
+  background-color: #3b8491;
+  margin-bottom: 60px; /* margem maior embaixo */
+  margin: 40px 0 0 0;
+}
+
+.card-fundo h1 {
+  font-size: 3.6rem;
+  color: #f9feff;
+  margin: 80px 80px 20px 80px; /* espaço inferior reduzido para separar melhor do p */
+}
+
+.card-fundo p {
+  font-size: 1.6rem;
+  color: #ffffff;
+  line-height: 1.8;
+  margin: 0 80px 80px 80px; 
+  text-align: justify; /* texto justificado */
+  margin-left: 80px;   
+  width: 80%;           /* opcional: define largura menor que o card */
+
+}
+  .card-fundo::after {
+  content: "";
+  display: block;
+  height: 20px; /* ajuste de altura do espaçamento */
+  background-color: #3b8491; /* mesma cor do card-fundo */
+}
+
+/* ===== AJUSTES NO CONTEÚDO DOS CARDS ===== */
+.card-content {
+  padding: 1.5rem;
+  text-align: justify; /* texto justificado */
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem; /* espaço entre título e parágrafo */
+  color: #444;
+  text-align: left;
+}
+
+.card-content p {
+  font-size: 1.6rem; /* igual explorando */
+  color: #777;
+  line-height: 1.8;
+  margin: 0;
+  text-align: justify; /* texto justificado */
+}
+
+    .cards-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+      margin:3rem auto;
+      max-width:1100px;
+      padding:0 2rem;
+      
+    }
+
+    /* CARD */
+    .card{
+      background:#fff;
+      border-radius:var(--card-radius);
+      box-shadow:0 4px 12px rgba(0,0,0,.1);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      transition:transform .3s ease;
+    }
+    .card:hover{ transform:translateY(-5px); }
+
+  
+    .card-img{
+      padding:var(--img-pad);    
+      box-sizing:border-box;       
+    }
+    .card-img img{
+      width:100%;
+      height:var(--img-h);         
+      object-fit:cover;           
+      border-radius:var(--img-radius);
+      display:block;               
+      border:0;                    
+    }
+
+    /* CONTEÚDO */
+    .card-content{
+      padding:1.5rem;
+      text-align:center;
+    }
+    .card-content h3{
+      font-size:1.5rem;
+      margin-bottom:.5rem;
+      color:#444;
+    }
+    .card-content p{
+      font-size:1rem;
+      color:#777;
+      margin-bottom:1rem;
+    }
+    .btn{
+      display:inline-block;
+      background:#8ec3cc;
+      color:#fff;
+      padding:.7rem 1.2rem;
+      border-radius:8px;
+      text-decoration:none;
+      transition:background .3s ease;
+    }
+    .btn:hover{ background:#5695a0; }
+    @media (min-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.card-fundo + footer {
+  margin-top: 0; /* remove espaço extra */
+}
 /* footer */
 footer {
       background-color: #8ec3cc;
@@ -381,6 +508,21 @@ footer {
     margin-left: 0 !important;
     z-index: 1001;
   }
+  .Explorando {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 5%;
+    position: relative; 
+  }
+
+  .texto-explorando {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px; 
+  }
+
 
 }
 @media (max-width: 768px) {
