@@ -228,3 +228,14 @@ body {
     width: 100%;
   }
 }
+  .settings-form {
+    flex-direction: column;
+    align-items: center;
+  }
+  .form-right {
+    order: -1; /* coloca a coluna da foto acima */
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+

@@ -15,21 +15,13 @@ const imageUpload = document.getElementById("imageUpload");
 function toggleSidebar() {
   document.getElementById("sidebar").classList.toggle("active");
 }
-
-// Mostrar configurações
-function showSettings() {
-  profile.style.display = "none";
-  settings.style.display = "block";
-  nameInput.value = localStorage.getItem("name") || "";
-  emailInput.value = localStorage.getItem("email") || "";
-  previewImage.src = localStorage.getItem("profileImage") || "default-avatar.png";
-}
-
 // Cancelar edição
 function cancelEdit() {
   settings.style.display = "none";
   profile.style.display = "block";
 }
+
+
 
 // Upload imagem
 imageUpload.addEventListener("change", (event) => {
@@ -70,11 +62,20 @@ function deleteAccount() {
     }, 2000);
   }
 }
+const defaultAvatar = "images/Perfil/perfil-de-usuario.png";
 
-// Carregar dados
+function showSettings() {
+  profile.style.display = "none";
+  settings.style.display = "block";
+  nameInput.value = localStorage.getItem("name") || "";
+  emailInput.value = localStorage.getItem("email") || "";
+  previewImage.src = localStorage.getItem("profileImage") || defaultAvatar;
+}
+
 window.onload = () => {
   profileName.textContent = localStorage.getItem("name") || "Seu Nome";
   profileEmail.textContent = localStorage.getItem("email") || "seuemail@email.com";
-  profileImage.src = localStorage.getItem("profileImage") || "default-avatar.png";
+  profileImage.src = localStorage.getItem("profileImage") || defaultAvatar;
+  previewImage.src = localStorage.getItem("profileImage") || defaultAvatar;
   profileUsername.textContent = "@" + (localStorage.getItem("name") || "seudousuario").toLowerCase().replace(/\s+/g, "");
 };
