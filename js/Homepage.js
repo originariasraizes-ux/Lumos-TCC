@@ -1,38 +1,22 @@
-// MENU E FILTROS
-let navbar = document.querySelector('.navbar');
-let menuBtn = document.querySelector('#menu-btn');
-let filterBtn = document.querySelector('.filter-icon');
-let filters = document.getElementById('filters');
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.querySelector('.header .navbar');
+  const menuBtn = document.querySelector('#menu-btn');
 
-menuBtn.onclick = () => {
-  navbar.classList.toggle('active');
-};
+  menuBtn.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+  });
 
-filterBtn.onclick = () => {
-  filters.classList.toggle('hidden');
-};
+  window.addEventListener('scroll', () => {
+    navbar.classList.remove('active');
+  });
 
-window.onscroll = () => {
-  navbar.classList.remove('active');
-};
+  document.querySelectorAll('.dropdown').forEach(dropdown => {
+    const dropBtn = dropdown.querySelector('.dropbtn');
+    const dropContent = dropdown.querySelector('.dropdown-content');
 
-function toggleOption(element) {
-  element.classList.toggle('active');
-}
-
-// ----------------------
-// CARDS
-document.addEventListener("DOMContentLoaded", function() {
-  // Remove classes se necessário
-  navbar.classList.remove('active');
-
-  // Botões dos cards
-  document.querySelectorAll(".card button").forEach(button => {
-    button.addEventListener("click", function() {
-      const page = this.closest(".card").getAttribute("data-page");
-      if (page) {
-        window.location.href = page;
-      }
+    dropBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      dropContent.classList.toggle('active');
     });
   });
 });

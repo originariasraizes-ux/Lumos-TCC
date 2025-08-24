@@ -11,29 +11,38 @@
     <link rel="stylesheet" href="css/Homepage.css">
 </head>
 <body>
+<div class="onda-laranja">
+  <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="#8ec3cc" fill-opacity="" 
+      d="M0,64L60,90.7C120,117,240,171,360,181.3C480,192,600,160,720,138.7C840,117,960,107,1080,128C1200,149,1320,203,1380,229.3L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+    </path>
+  </svg>
+</div>
 
-    <header class="header">
-        <a href="lumos.html" class="logo"></a>
-        <img src="images/Logos/logoLumos.png" width="180px">
+ <header class="header">
+    <a href="Homepage.html" class="logo">
+    <img src="images/Logos/logoLumos.png" width="180px">
+  </a>
 
-        <nav class="navbar">
-            <a href="CienciasNaturais.html">Ciências Naturais</a>
-            <a href="CienciasHumanas.html">Ciências Humanas</a>
-            <a href="CienciasExatas.html">Ciências Exatas</a>
-            <a href="IdiomasComunicacao.html">Comunicação</a>
-            <a href="Dashboard.html">Dashboard</a>
-            
-        </nav>
-
-        <div class="icons">
-            <a href="login.html">
-            <div class="fas fa-user" id="login-btn"></div>
-        </a>
-            <div class="fas fa-bars" id="menu-btn"></div>
+   <nav class="navbar">
+      <div class="dropdown">
+          <a href="" class="dropbtn">Área de Conhecimento ▾</a>
+          <div class="dropdown-content">
+              <a href="CienciasNaturais.html">Ciências Naturais</a>
+              <a href="CienciasHumanas.html">Ciências Humanas</a>
+              <a href="CienciasExatas.html">Ciências Exatas </a>
+              <a href="IdiomasComunicacao.html">Idioma e Comunicação</a>
+          </div>
         </div>
+      <a href="Dashboard.html">Dashboard</a>
+   </nav>
 
+   <div class="icons">
+      <a href="login.html"><div class="fas fa-user"></div></a>
+      <div class="fas fa-bars" id="menu-btn"></div>
+   </div>
+</header>
 
-    </header>
 
 
     <section class="home" id="home">
@@ -46,13 +55,16 @@
          O objetivo principal é fornecer uma plataforma centralizada onde professores possam 
          acessar, organizar e compartilhar jogos pedagógicos.
          Esses jogos e atividades têm como foco a aplicação prática de conteúdos curriculares,
-        promovendo um aprendizado interativo e dinâmico. </p></div>
- <div><img src="images/Homepage/fastaminha.gif" class="img"></div>
+        promovendo um aprendizado interativo e dinâmico. 
+        <br>
+     <br> Além disso, o LUMOS busca aproximar alunos e professores por meio de uma experiência educacional mais envolvente, incentivando a colaboração e a troca de conhecimento em um ambiente digital acessível. A proposta é transformar o estudo em um processo prazeroso e motivador, em que o estudante se sinta parte ativa do próprio aprendizado, ao mesmo tempo em que os educadores encontram ferramentas práticas para tornar suas aulas mais atrativas e eficazes.
+</p></div>
+ <div><img src="images/Homepage/fantasma.gif" class="img"></div>
   
     </div>
-    </div>
+    
 
-        <div class="custom-shape-divider-bottom-1684324473">
+        <div class="onda-roxa">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
             </svg>
@@ -163,6 +175,6 @@
     <script>
         lightGallery(document.querySelector('.gallery .gallery-container'));
     </script>
-
+    
 </body>
 </html>
