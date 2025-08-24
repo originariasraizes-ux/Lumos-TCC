@@ -15,26 +15,37 @@
 <body>
 
   <!-- HEADER -->
-  <header class="header">
+
+<div class="onda">
+  <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="#91d5e1" fill-opacity="" 
+      d="M0,64L60,90.7C120,117,240,171,360,181.3C480,192,600,160,720,138.7C840,117,960,107,1080,128C1200,149,1320,203,1380,229.3L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+    </path>
+  </svg>
+</div>
+ <header class="header">
     <a href="Homepage.html" class="logo">
-      <img src="images/Logos/LumosCienciaNatural.png"  width="180px" alt="Logo Lumos">
+    <img src="images/Logos/LumosCienciaNatural.png" width="180px">
     </a>
 
-    <nav class="navbar">
-            <a href="CienciasNaturais.html">Ciências Naturais</a>
-            <a href="CienciasHumanas.html">Ciências Humanas</a>
-            <a href="CienciasExatas.html">Ciências Exatas</a>
-            <a href="IdiomasComunicacao.html">Comunicação</a>
-            <a href="#Dashboard">Dashboard</a>
-            <a href="#QuemSomos">Quem somos</a>
-    </nav>
+   <nav class="navbar">
+      <div class="dropdown">
+          <a href="" class="dropbtn">Área de Conhecimento ▾</a>
+          <div class="dropdown-content">
+              <a href="CienciasNaturais.html">Ciências Naturais</a>
+              <a href="CienciasHumanas.html">Ciências Humanas</a>
+              <a href="CienciasExatas.html">Ciências Exatas </a>
+              <a href="IdiomasComunicacao.html">Idioma e Comunicação</a>
+          </div>
+        </div>
+      <a href="Dashboard.html">Dashboard</a>
+   </nav>
 
-    <div class="icons">
+   <div class="icons">
       <a href="login.html"><div class="fas fa-user"></div></a>
       <div class="fas fa-bars" id="menu-btn"></div>
-    </div>
-  </header>
-
+   </div>
+</header>
 
  <section class="advinhePersonalidade">
     <h1 style="color: #2c646e;" class="league-spartan">Descobrindo os Planetas do Sistema Solar</h1>
