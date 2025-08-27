@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Poppins', sans-serif;
+  background-color:#fbf6ed;
+  color:#111;
+  min-height:100vh;
+}
+
+/* SIDEBAR */
+.sidebar .logo img { width:100%; height:auto; margin-bottom:20px; }
+.sidebar{position:fixed;inset:0 auto 0 0;width:240px;background:var(--vinho);color:#9D304A;padding:22px;border-radius:0 22px 22px 0;box-shadow:var(--shadow);transition:transform .3s ease;z-index:1000}
+.nav{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.nav-link{display:block;background:#fff;color:var(--vinho);padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:700}
+.nav-link.active,.nav-link:hover{background:#f472b6;color:#9D304A}
+/* HAMBURGUER */
+.hamburger{display:none;position:fixed;top:16px;left:16px;font-size:28px;border:none;background:transparent;color:var(--vinho);z-index:1100;cursor:pointer}
+
+
+/* MAIN */
+.main { margin-left:250px; padding:28px; min-height:100vh; }
+.header { display:flex; justify-content:space-between; align-items:center; margin-bottom:22px; }
+
+/* CALENDÁRIO */
+.navegacao { display:flex; justify-content:center; align-items:center; margin:15px 0; font-size:18px; }
+.navegacao button { background:#f49bb6; border:none; color:white; font-size:18px; padding:5px 12px; border-radius:8px; cursor:pointer; margin:0 10px; }
+
+.calendario { width:100%; border-collapse:collapse; text-align:center; }
+.calendario thead th { background:#f49bb6; color:white; padding:10px; font-weight:bold; }
+.calendario td { width:14.28%; height:80px; border:1px solid #d8c8c8; vertical-align:top; position:relative; cursor:pointer; }
+.calendario td span.dia { position:absolute; top:5px; left:5px; font-size:14px; color:#333; }
+
+.turma-label {
+  display:inline-block;
+  padding:2px 6px;
+  border-radius:6px;
+  color:white;
+  font-size:12px;
+  margin-top:20px;
+  word-break:break-word;
+}
+
+/* MODAL */
+.modal { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); display:flex; justify-content:center; align-items:center; z-index:1000; }
+.modal.hidden { display:none; }
+.modal-content { background:#fdf6ee; padding:20px; border-radius:16px; width:300px; text-align:center; }
+
+.modal-buttons { display:flex; gap:8px; margin-top:15px; }
+.btn-cancelar { background:#b34055; color:white; padding:8px 12px; border:none; border-radius:8px; cursor:pointer; }
+.btn-confirmar { background:#7bbbe0; color:white; padding:8px 12px; border:none; border-radius:8px; cursor:pointer; }
+.btn-excluir { background:#e74c3c; color:#fff; padding:8px 12px; border:none; border-radius:8px; cursor:pointer; }
+
+/* RESPONSIVO */
+@media (max-width: 860px){
+  .hamburger{display:block}
+  .sidebar{transform:translateX(-270px)}
+  .sidebar.open{transform:translateX(0)}
+  .main{margin-left:0;padding-top:64px}
+}

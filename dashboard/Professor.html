@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard Professor - Lumos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="Professor.css" />
+</head>
+<body>
+  <!-- Botão hambúrguer (responsivo) -->
+  <button class="hamburger" id="btnHamburguer" aria-label="Abrir menu">☰</button>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <a href="Homepage.html" class="logo">
+      <img src="imagens/logoLumos.png" alt="Logo Lumos">
+    </a>
+    <div class="user-box">
+      <div class="hello">Olá, <span id="nomeUsuarioSidebar">Professor</span>!</div>
+    </div>
+
+    <nav class="nav">
+      <a class="nav-link active" data-goto="tab-turmas">📚 Turmas</a>
+      <a class="nav-link" data-goto="tab-tarefas">📝 Tarefas</a>
+      <a class="nav-link" href="CalendárioTeste.html">📅 Calendário</a>
+      <a class="nav-link" data-goto="tab-progresso">📈 Progresso</a>
+      <a class="nav-link" data-goto="tab-ranking">🏆 Ranking</a>
+    </nav>
+
+    <div class="today-card">
+      <div class="title">Today's Progress</div>
+      <div class="circle"><span id="progressTodayPct">67%</span></div>
+      <small>Conclua tarefas e ganhe XP</small>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <header class="topbar">
+      <h1 class="page-title">Dashboard • Professor</h1>
+      <div class="actions">
+        <button id="btnNovaTurma" class="btn primary">+ Criar turma</button>
+        <button id="btnPerfil" class="btn circle" title="Perfil" onclick="location.href='Perfil.html'">👤</button>
+      </div>
+    </header>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="tab-turmas">Turmas</button>
+      <button class="tab-btn" data-tab="tab-tarefas">Tarefas</button>
+      <button class="tab-btn" data-tab="tab-progresso">Progresso</button>
+      <button class="tab-btn" data-tab="tab-ranking">Ranking</button>
+    </div>
+
+    <!-- 📚 TURMAS -->
+    <section id="tab-turmas" class="tab-panel show">
+      <div id="cardsTurmas" class="cards"></div>
+    </section>
+
+    <!-- 📝 TAREFAS -->
+    <section id="tab-tarefas" class="tab-panel">
+      <div class="toolbar">
+        <select id="selectTurmaTarefa" class="select"></select>
+        <button id="btnNovaTarefa" class="btn primary">+ Nova tarefa</button>
+      </div>
+      <div id="listaTarefas" class="list"></div>
+    </section>
+
+    <!-- 📈 PROGRESSO -->
+    <section id="tab-progresso" class="tab-panel">
+      <div id="listaProgresso" class="progress-list"></div>
+    </section>
+
+    <!-- 🏆 RANKING -->
+    <section id="tab-ranking" class="tab-panel">
+      <div class="toolbar">
+        <select id="selectTurmaRanking" class="select"></select>
+      </div>
+      <div id="rankingContainer" class="ranking-list"></div>
+    </section>
+  </main>
+
+  <!-- MODAL: Criar/Editar TURMA -->
+  <div class="modal" id="modalTurma" aria-hidden="true">
+    <div class="modal-box">
+      <h2 id="modalTurmaTitulo">Criar turma</h2>
+      <label class="lbl">Nome</label>
+      <input id="turmaNome" class="inp" placeholder="Ex.: 1ºA - Português" />
+
+      <label class="lbl">Área de conhecimento</label>
+      <select id="turmaArea" class="inp">
+        <option value="" disabled selected>Selecione</option>
+        <option value="Linguagens">Linguagens</option>
+        <option value="Matemática">Matemática</option>
+        <option value="Ciências Humanas">Ciências Humanas</option>
+        <option value="Ciências da Natureza">Ciências da Natureza</option>
+      </select>
+
+      <div class="modal-actions">
+        <button class="btn ghost" id="cancelTurma">Cancelar</button>
+        <button class="btn success" id="saveTurma">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Criar/Editar TAREFA -->
+  <div class="modal" id="modalTarefa" aria-hidden="true">
+    <div class="modal-box">
+      <h2 id="modalTarefaTitulo">Nova tarefa</h2>
+
+      <label class="lbl">Turma</label>
+      <select id="tarefaTurma" class="inp"></select>
+
+      <label class="lbl">Título</label>
+      <input id="tarefaTitulo" class="inp" placeholder="Ex.: Lista 01" />
+
+      <label class="lbl">Descrição</label>
+      <textarea id="tarefaDescricao" class="inp" rows="3" placeholder="Detalhes"></textarea>
+
+      <label class="lbl">Data</label>
+      <input id="tarefaData" class="inp" type="date" />
+
+      <label class="lbl">XP</label>
+      <input id="tarefaXP" class="inp" type="number" min="0" step="10" value="10" />
+
+      <div class="modal-actions">
+        <button class="btn ghost" id="cancelTarefa">Cancelar</button>
+        <button class="btn success" id="saveTarefa">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="Professor.js"></script>
+</body>
+</html>

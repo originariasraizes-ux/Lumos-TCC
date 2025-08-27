@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard Aluno - Lumos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="dashboard/" />
+</head>
+<body>
+  <button class="hamburger" id="btnHamburguerAluno" aria-label="Abrir menu">☰</button>
+
+  <aside class="sidebar" id="sidebarAluno">
+    <a href="Homepage.html" class="logo">
+    <img src="images/Logos/logoLumos.png" width="180px">
+  </a>
+
+    <div class="user-box">
+      <div class="hello">Olá, <span id="nomeAlunoSidebar">Aluno</span>!</div>
+      <div class="xp-box">⭐ XP Total: <strong id="xpTotal">0</strong></div>
+    </div>
+    <nav class="nav">
+      <a class="nav-link active" data-goto="tab-minhas-turmas">📚 Minhas Turmas</a>
+      <a class="nav-link" data-goto="tab-minhas-tarefas">📝 Minhas Tarefas</a>
+      <a class="nav-link" href="CalendárioTeste.html">📅 Calendário</a>
+      <a class="nav-link" data-goto="tab-meu-progresso">📊 Meu Progresso</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1 class="page-title">Dashboard • Aluno</h1>
+      <div class="actions">
+        <button class="btn circle" title="Perfil" onclick="location.href='Perfil.html'">👤</button>
+      </div>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="tab-minhas-turmas">Minhas Turmas</button>
+      <button class="tab-btn" data-tab="tab-minhas-tarefas">Minhas Tarefas</button>
+      <button class="tab-btn" data-tab="tab-meu-progresso">Meu Progresso</button>
+    </div>
+
+    <section id="tab-minhas-turmas" class="tab-panel show">
+      <div class="toolbar">
+        <input id="codigoTurma" class="inp" placeholder="Código da turma" />
+        <button id="btnEntrarTurma" class="btn primary">Entrar</button>
+      </div>
+      <div id="cardsMinhasTurmas" class="cards"></div>
+    </section>
+
+    <section id="tab-minhas-tarefas" class="tab-panel">
+      <div id="listaMinhasTarefas" class="list"></div>
+    </section>
+
+    <section id="tab-meu-progresso" class="tab-panel">
+      <div id="listaMeuProgresso" class="progress-list"></div>
+    </section>
+  </main>
+
+  <script src="Aluno.js"></script>
+</body>
+</html>
