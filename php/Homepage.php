@@ -1,0 +1,204 @@
+<?php 
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumos</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+    <link rel="stylesheet" href="/Lumos-TCC-main/css/Homepage.css">
+</head>
+<body>
+<div class="onda-laranja">
+  <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="#8ec3cc" fill-opacity="" 
+      d="M0,64L60,90.7C120,117,240,171,360,181.3C480,192,600,160,720,138.7C840,117,960,107,1080,128C1200,149,1320,203,1380,229.3L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+    </path>
+  </svg>
+</div>
+
+ <header class="header">
+    <a href="Homepage.html" class="logo">
+    <img src="/Lumos-TCC-main/images/Logos/logoLumos.png" width="180px">
+  </a>
+
+   <nav class="navbar">
+      <div class="dropdown">
+          <a href="" class="dropbtn">Área de Conhecimento ▾</a>
+          <div class="dropdown-content">
+              <a href="/Lumos-TCC-main/php/CienciasNaturais.php">Ciências Naturais</a>
+              <a href="/Lumos-TCC-main/php/CienciasHumanas.php">Ciências Humanas</a>
+              <a href="/Lumos-TCC-main/php/CienciasExatas.php">Ciências Exatas </a>
+              <a href="/Lumos-TCC-main/php/IdiomasComunicacao.php">Idioma e Comunicação</a>
+          </div>
+        </div>
+       <?php
+     $dashboardLink = '/Lumos-TCC-main/dashboard/Aluno.html'; 
+    if (isset($_SESSION['tipo'])) {
+    switch ($_SESSION['tipo']) {
+        case 'aluno':
+            $dashboardLink = '/Lumos-TCC-main/dashboard/Aluno.html';
+            break;
+        case 'professor':
+            $dashboardLink = '/Lumos-TCC-main/dashboard/Professor.html';
+            break;
+    }
+}      
+      ?>
+      
+  <a href="<?php echo $dashboardLink; ?>">Dashboard</a>
+   </nav>
+
+   <div class="icons">
+    <?php
+      if(isset($_SESSION['idUsuario'])){
+        echo '<a href="/Lumos-TCC-main/php/Perfil.php"><div class="fas fa-user"></div></a>';
+      } else{
+        echo '<a href="/Lumos-TCC-main/php/login.php"><div class="fas fa-user"></div></a>';
+      }
+      
+      ?>
+      <div class="fas fa-bars" id="menu-btn"></div>
+   </div>
+</header>
+
+
+
+    <section class="home" id="home">
+    <h1>Bem-vindo ao Lumos: <br> <span class="destaque1" style="color: rgb(255, 255, 255);">Aprendizado Lúdico!</span></h1>
+  
+<div class="container">
+    <div>
+            <p> O LUMOS é um site inovador voltado para o aprendizado por meio da gamificação 
+        e de projetos educacionais.
+         O objetivo principal é fornecer uma plataforma centralizada onde professores possam 
+         acessar, organizar e compartilhar jogos pedagógicos.
+         Esses jogos e atividades têm como foco a aplicação prática de conteúdos curriculares,
+        promovendo um aprendizado interativo e dinâmico. 
+        <br>
+     <br> Além disso, o LUMOS busca aproximar alunos e professores por meio de uma experiência educacional mais envolvente, incentivando a colaboração e a troca de conhecimento em um ambiente digital acessível. A proposta é transformar o estudo em um processo prazeroso e motivador, em que o estudante se sinta parte ativa do próprio aprendizado, ao mesmo tempo em que os educadores encontram ferramentas práticas para tornar suas aulas mais atrativas e eficazes.
+</p></div>
+ <div><img src="/Lumos-TCC-main/images/Homepage/fantasma.gif" class="img"></div>
+  
+    </div>
+    
+
+        <div class="onda-roxa">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
+    </section>
+
+ <div class="Sobre">
+    <div class="texto">
+<h1 style="color: rgb(255, 255, 255);">Mas afinal, o que é <br> <span class="destaque2">gamificação?</span></h1>
+
+      <p style="color: rgb(255, 255, 255);">
+        A gamificação é o uso de elementos e dinâmicas de jogos em contextos
+        que vão além do entretenimento, como na educação. Essa abordagem inovadora
+        transforma o processo de aprendizado em uma experiência mais envolvente,
+        interativa e motivadora, aproveitando mecânicas como desafios, recompensas,
+        níveis e metas para captar o interesse dos alunos e estimular a participação ativa.
+      </p>
+    </div>
+    <img src="/Lumos-TCC-main/images/Homepage/controlehome.png" class="img">
+  </div>
+
+
+
+    <section class="piramide">
+        <h1>Benefícios da gamificação aplicada à <br><span class="destaque3" style="color: rgb(255, 255, 255);">Educação</span></h1>
+      
+    <div class="container">
+         <img src="/Lumos-TCC-main/images/Homepage/piramide.png" class="img"> 
+        <p>
+            No ambiente educacional, a gamificação traz uma série de benefícios que transformam o aprendizado em 
+            uma experiência mais envolvente e eficaz. Ela desperta o desejo de alcançar objetivos e superar desafios, 
+            incentivando os alunos a aprenderem de forma espontânea e contínua. Além disso, promove um maior envolvimento
+             nas atividades,
+             graças à interatividade que torna o aprendizado mais dinâmico e interessante.<br>
+            <br>
+
+            Ao conectar conteúdos com experiências práticas e divertidas, a gamificação também facilita a
+            memorização e a compreensão dos conceitos abordados. Jogos em grupo contribuem para o
+            desenvolvimento de habilidades importantes, como trabalho em equipe, resolução de problemas e comunicação 
+            eficaz. Por fim, as dinâmicas gamificadas permitem que os desafios sejam adaptados ao ritmo e às necessidades de cada aluno, respeitando diferentes formas de aprendizado e tornando o processo ainda mais inclusivo e personalizado.
+            </p>
+       
+    </div>
+</section>
+   <h3>Explore os Quatros Caminhos do Lumos</h3>
+   <div class="grid">
+    <!-- Card 1 -->
+    <article class="card teal">
+      <img src="/Lumos-TCC-main/images/Logos/LumosCienciaNatural.png" alt="Logo Ciências Naturais" class="logo-img">
+      <div class="subtitle">Ciências Naturais, Saúde e Meio Ambiente</div>
+      <a href="/Lumos-TCC-main/php/CienciasNaturais.php" class="pill">Acessar <span class="arrow">➜</span></a>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card amber">
+      <img src="/Lumos-TCC-main/images/Logos/LumosHumanasLetras.png" alt="Logo Ciências Humanas" class="logo-img">
+      <div class="subtitle">Ciências Humanas e Letras</div>
+      <a href="/Lumos-TCC-main/php/CienciasHumanas.php" class="pill">Acessar <span class="arrow">➜</span></a>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card wine">
+      <img src="/Lumos-TCC-main/images/Logos/LumosExatas.png" alt="Logo Ciências Exatas" class="logo-img">
+      <div class="subtitle">Ciências Exatas</div>
+      <a href="/Lumos-TCC-main/php/CienciasExatas.php" class="pill">Acessar <span class="arrow">➜</span></a>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="card purple">
+      <img src="/Lumos-TCC-main/images/Logos/Lumos Idiomas.png" alt="Logo Idiomas" class="logo-img">
+      <div class="subtitle">Idiomas e Comunicação</div>
+      <a href="/Lumos-TCC-main/php/IdiomasComunicacao.php" class="pill">Acessar <span class="arrow">➜</span></a>
+    </article>
+  </div>
+
+    <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <img src="/Lumos-TCC-main/images/Logos/logoLumos.png" class="logo-footer">
+        <p>O aprendizado é a chave para o futuro. Continue explorando, descobrindo e se superando</p>
+      </div>
+
+      <div class="footer-col">
+        <h3 style="color: #fff;">Sobre nós</h3>
+        <ul>
+          <li><a href="/Lumos-TCC-main/php/Homepage.php">Home</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="Suporte.html">Contatos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 style="color:#fff;">Entre em Contato</h3>
+        <p>📍 Etec de Carapicuíba</p>
+        <p>✉️ Lumos@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p style="color:#fff; text-align: center;">Copyright © 2025 Lumos</p>
+    </div>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+    <script src="/Lumos-TCC-main/js/Homepage.js"></script>
+    <script>
+        lightGallery(document.querySelector('.gallery .gallery-container'));
+    </script>
+    
+</body>
+</html>

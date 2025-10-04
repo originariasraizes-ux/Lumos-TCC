@@ -1,0 +1,96 @@
+
+<?php
+session_start();
+
+if(!isset($_SESSION['idUsuario'])){
+    header("Location: /Lumos-TCC-main/php/login.php"); 
+    exit();
+}
+$nome = $_SESSION['nomeUsuario'] ?? '';
+$apelido = $_SESSION['apelidoUsuario']?? '';
+$email = $_SESSION['emailUsuario'] ?? '';
+
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/Lumos-TCC-main/css/Perfil.css">
+</head>
+<body>
+
+  <!-- HAMBURGER -->
+  <button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <a href="/Lumos-TCC-main/php/Homepage.php" class="logo">
+      <img src="/Lumos-TCC-main/images/Logos/logoLumos.png" alt="Logo Lumos">
+    </a>
+    <nav class="navbar">
+      <a href="CienciasNaturais.html">Ciências Naturais, Saúde e Meio Ambiente</a>
+      <a href="CienciasHumanas.html">Ciências Humanas e Letras</a>
+      <a href="CienciasExatas.html">Ciências Exatas</a>
+      <a href="IdiomasComunicacao.html">Idiomas e Comunicação</a>
+      <a href="dashboard/Aluno.html">Dashboard</a>
+      
+    </nav>
+  </div>
+
+  <!-- PERFIL -->
+  <div id="profile" class="card">
+    <img id="profileImage" src="/Lumos-TCC-main/images/Perfil/perfil-de-usuario.png" class="avatar">
+    <h2 id="profileName"><?php echo $nome; ?></h2>
+    <p id="profileUsername"><?php echo $apelido; ?></p>
+    <p id="profileEmail"><?php echo $email; ?></p>
+    <button onclick="showSettings()">Editar Perfil</button>
+  </div>
+
+  <!-- CONFIGURAÇÕES -->
+  <div id="settings" class="card">
+    <h2>Configurações</h2>
+    <div class="settings-form">
+      <!-- ESQUERDA -->
+      <div class="form-left">
+        <label>Seu nome</label>
+        <input type="text" id="nameInput">
+
+        <label>Senha<span class="change">Mudar</span></label>
+        <input type="password" id="passwordInput">
+
+        <label>Email<span class="change">Mudar</span></label>
+        <input type="email" id="emailInput">
+      </div>
+
+      <!-- DIREITA -->
+      <div class="form-right">
+        <img id="previewImage" src="images/Perfil/perfil-de-usuario.png" class="avatar">
+        <input type="file" id="imageUpload" accept="image/*" style="display:none;">
+        <button class="upload-btn" onclick="document.getElementById('imageUpload').click()">Upload a picture</button>
+      </div>
+    </div>
+
+    <!-- DELETE -->
+    <div class="delete-account">
+      <a href="#" id="deleteAccount">Deletar sua conta</a>
+     </div>
+
+    <!-- BOTÕES -->
+    <div class="buttons">
+      <button class="btn-secondary" onclick="cancelEdit()">Cancelar</button>
+      <button class="btn-primary" id="saveBtn">Salvar</button>
+    </div>
+  </div>
+
+  <!-- Notificação ao excluir conta -->
+  <div id="notification" style="display:none; text-align:center; margin-top:20px; color:rgb(251, 188, 61); font-weight:bold;">
+    Conta excluída com sucesso! Redirecionando...
+  </div>
+
+  <script src="js/Perfil.js"></script>
+</body>
+</html>
