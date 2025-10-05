@@ -107,7 +107,7 @@ session_start();
 
   </section>
 
-  <!-- IMAGEM CAPA DE JOGO -->
+  <!-- imagem CAPA DE JOGO -->
  
  <!-- Footer -->
   <footer>
