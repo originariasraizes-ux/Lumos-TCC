@@ -25,3 +25,14 @@
       const f=e.target.files[0];
       if(f){const r=new FileReader();r.onload=()=>{document.getElementById("photoPreview").src=r.result;};r.readAsDataURL(f);}
     });
+
+    let filterBtn = document.querySelector('.filter-icon');
+let filters = document.getElementById('filters');
+
+filterBtn.onclick = () => {
+  filters.classList.toggle('hidden');
+};
+
+function toggleOption(element) {
+  element.classList.toggle('active');
+}

@@ -9,11 +9,27 @@ body {
 }
 
 h2{
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   margin-bottom: 20px;
   color: #e18c1e;
   text-align: center;
+}
+
+h1{
+  font-size: 16px;
+  font-weight: 600;
+  margin: 40px;
+  color:#978356;
+  text-align: left;
+    display: inline-block;
+    margin-top: 3px;
+}
+h3{
+  margin: 40px;
+  color: #5d3d0a; 
+  font-size: 30px;
+  text-transform: none;
 }
 
 /* SIDEBAR */
@@ -57,10 +73,11 @@ h2{
   display: flex;
   justify-content: center;
   padding: 10px; /* mantém margem de 10px */
+  
 }
 
 .card-inner {
-  background-color: #fff;
+  background-color: #fbf6ed;
   border-radius: 30px; /* deixa todos os lados bem arredondados */
   width: calc(100% - 20px); /* 10px de margem de cada lado */
   height: calc(100% - 20px); /* 10px de margem superior/inferior */
@@ -76,7 +93,7 @@ h2{
 }
 
 /* PERFIL */
-.profile-card { background: #fff; border-radius: 20px; width: 100%; height: 100%; position: relative; }
+.profile-card {   background-color: #fbf6ed;; border-radius: 20px; width: 100%; height: 100%; position: relative; }
 .perfil-title { color: #e18c1e; font-size: 24px; font-weight: 600; margin-bottom: 20px; text-align: left; }
 
 /* ===== BANNER ===== */
@@ -101,8 +118,8 @@ h2{
   top: 100%;                 /* começa na base do banner */
   left: 50%;                 /* centraliza */
   transform: translate(-50%, -50%); /* metade dentro, metade fora */
-  border: 4px solid #fff;
-  background: #fff;
+  border: 4px solid  #fbf6ed;
+   background-color: #fbf6ed;
   z-index: 2; /* fica na frente */
 }
 
@@ -111,6 +128,93 @@ h2{
   height: 100%;
   object-fit: cover;
 }
+/* ===== BARRA DE PESQUISA E FILTROS ===== */
+.search-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  padding: 10px 15px;
+  width: 320px;
+ margin: 30px;
+  margin-top: 1px;
+  margin-bottom: 30px ;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+  padding: 5px;
+}
+
+.search-icon, .filter-icon {
+  background: #efa019;
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-icon:hover, .filter-icon:hover {
+  background: #f5b13c;
+}
+
+.filters {
+  background: white;
+  margin: 15px 0 0 0;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  width: 320px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.filters.hidden {
+  display: none;
+}
+
+.filters h3 {
+  margin: 0 0 10px;
+  font-size: 1.8rem;
+}
+
+.filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-option {
+  padding: 8px 12px;
+  background: #f0f0f0;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  user-select: none;
+}
+
+.filter-option.active {
+  background: #efa019;
+  color: white;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 
 
 /* ===== AVATAR NAS CONFIGURAÇÕES ===== */
@@ -140,7 +244,7 @@ h2{
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
-  /* Botões de edição específicos */
+
 
 
 }
@@ -166,7 +270,7 @@ h2{
   padding: 5px 25px;
   border-radius: 20px;
   font-weight: 600;
-  color: #a0762f;
+  color: #978356;
   margin-bottom: 5px;
 }
 

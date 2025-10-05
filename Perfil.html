@@ -44,6 +44,29 @@
         </div>
         
         <h2>Jogos Favoritos</h2>
+        <!-- BARRA DE PESQUISA -->
+      <h1> Pesquise seus jogos favoritos por área!</h1>  
+<div class="search-container">
+  <input type="text" placeholder="Buscar conteúdo..." class="search-input">
+  <button class="search-icon" title="Buscar">&#128269;</button>
+  <button class="filter-icon" onclick="toggleFilters()" title="Filtros">&#9881;</button>
+</div>
+
+<!-- FILTROS -->
+<div id="filters" class="filters hidden">
+  <h3>Filtros</h3>
+  <div class="filter-list">
+    <div class="filter-option" onclick="toggleOption(this)">Ciências Naturais</div>
+    <div class="filter-option" onclick="toggleOption(this)">Saúde</div>
+    <div class="filter-option" onclick="toggleOption(this)">Meio Ambiente</div>
+    <div class="filter-option" onclick="toggleOption(this)">Ciências Humanas</div>
+    <div class="filter-option" onclick="toggleOption(this)">Letras</div>
+    <div class="filter-option" onclick="toggleOption(this)">Ciências Exatas</div>
+    <div class="filter-option" onclick="toggleOption(this)">Idiomas</div>
+    <div class="filter-option" onclick="toggleOption(this)">Comunicação</div>
+  </div>
+</div>
+
         <div class="favorites">
           <div class="fav"><span class="star">★</span></div>
           <div class="fav"><span class="star">★</span></div>
