@@ -1,81 +1,27 @@
-const profile = document.getElementById("profile");
-const settings = document.getElementById("settings");
-
-const profileName = document.getElementById("profileName");
-const profileUsername = document.getElementById("profileUsername");
-const profileEmail = document.getElementById("profileEmail");
-const profileImage = document.getElementById("profileImage");
-
-const nameInput = document.getElementById("nameInput");
-const emailInput = document.getElementById("emailInput");
-const previewImage = document.getElementById("previewImage");
-const imageUpload = document.getElementById("imageUpload");
-
-// Sidebar toggle
-function toggleSidebar() {
-  document.getElementById("sidebar").classList.toggle("active");
-}
-// Cancelar edição
-function cancelEdit() {
-  settings.style.display = "none";
-  profile.style.display = "block";
+ function abrirConfiguracoes() {
+      document.getElementById("perfilCard").classList.add("hidden");
+      document.getElementById("configCard").classList.remove("hidden");
+    }
+    function cancelarEdicao() {
+      document.getElementById("configCard").classList.add("hidden");
+      document.getElementById("perfilCard").classList.remove("hidden");
+    }
+  function salvarEdicao() {
+  const nome = document.getElementById("nomeInput").value;
+  const bio = document.getElementById("bioInput").value; // aqui estava vazio
+  document.querySelector("#perfilCard .name").textContent = nome;
+  document.querySelector("#perfilCard .bio").textContent = bio;
+  cancelarEdicao();
 }
 
-
-
-// Upload imagem
-imageUpload.addEventListener("change", (event) => {
-  const file = event.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = () => {
-      previewImage.src = reader.result;
-    };
-    reader.readAsDataURL(file);
-  }
-});
-
-// Salvar dados
-document.getElementById("saveBtn").addEventListener("click", () => {
-  localStorage.setItem("name", nameInput.value);
-  localStorage.setItem("email", emailInput.value);
-  localStorage.setItem("profileImage", previewImage.src);
-
-  profileName.textContent = nameInput.value;
-  profileEmail.textContent = emailInput.value;
-  profileUsername.textContent = "@" + nameInput.value.toLowerCase().replace(/\s+/g, "");
-  profileImage.src = previewImage.src;
-
-  cancelEdit();
-});
-
-// Deletar conta
-document.getElementById("deleteAccount").addEventListener("click", deleteAccount);
-
-function deleteAccount() {
-  if (confirm("Tem certeza que deseja excluir sua conta? Todos os seus dados serão perdidos.")) {
-    localStorage.clear();
-    const notification = document.getElementById("notification");
-    notification.style.display = "block";
-    setTimeout(() => {
-      window.location.href = "login.html";
-    }, 2000);
-  }
-}
-const defaultAvatar = "images/Perfil/perfil-de-usuario.png";
-
-function showSettings() {
-  profile.style.display = "none";
-  settings.style.display = "block";
-  nameInput.value = localStorage.getItem("name") || "";
-  emailInput.value = localStorage.getItem("email") || "";
-  previewImage.src = localStorage.getItem("profileImage") || defaultAvatar;
-}
-
-window.onload = () => {
-  profileName.textContent = localStorage.getItem("name") || "Seu Nome";
-  profileEmail.textContent = localStorage.getItem("email") || "seuemail@email.com";
-  profileImage.src = localStorage.getItem("profileImage") || defaultAvatar;
-  previewImage.src = localStorage.getItem("profileImage") || defaultAvatar;
-  profileUsername.textContent = "@" + (localStorage.getItem("name") || "seudousuario").toLowerCase().replace(/\s+/g, "");
-};
+    function confirmarExclusao() {document.getElementById("modalConfirm").classList.remove("hidden");}
+    function fecharModal() {document.getElementById("modalConfirm").classList.add("hidden");}
+    function excluirConta() {localStorage.clear();window.location.href="login.html";}
+    document.getElementById("bannerUpload").addEventListener("change",(e)=>{
+      const f=e.target.files[0];
+      if(f){const r=new FileReader();r.onload=()=>{document.getElementById("bannerPreview").style.backgroundImage=`url('${r.result}')`;};r.readAsDataURL(f);}
+    });
+    document.getElementById("photoUpload").addEventListener("change",(e)=>{
+      const f=e.target.files[0];
+      if(f){const r=new FileReader();r.onload=()=>{document.getElementById("photoPreview").src=r.result;};r.readAsDataURL(f);}
+    });

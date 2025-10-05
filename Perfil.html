@@ -10,11 +10,9 @@
 </head>
 <body>
 
-  <!-- HAMBURGER -->
-  <button class="hamburger" onclick="toggleSidebar()">☰</button>
 
   <!-- SIDEBAR -->
-  <div class="sidebar" id="sidebar">
+  <div class="sidebar">
     <a href="Homepage.html" class="logo">
       <img src="images/Logos/logoLumos.png" alt="Logo Lumos">
     </a>
@@ -23,59 +21,92 @@
       <a href="CienciasHumanas.html">Ciências Humanas e Letras</a>
       <a href="CienciasExatas.html">Ciências Exatas</a>
       <a href="IdiomasComunicacao.html">Idiomas e Comunicação</a>
-      <a href="dashboard/Aluno.html">Dashboard</a>
-      
+      <a href="Dashboard.html">Dashboard</a>
     </nav>
   </div>
 
-  <!-- PERFIL -->
-  <div id="profile" class="card">
-    <img id="profileImage" src="images/Perfil/perfil-de-usuario.png" class="avatar">
-    <h2 id="profileName">Seu Nome</h2>
-    <p id="profileUsername">@seudousuario</p>
-    <p id="profileEmail">seuemail@email.com</p>
-    <button onclick="showSettings()">Editar Perfil</button>
-  </div>
-
-  <!-- CONFIGURAÇÕES -->
-  <div id="settings" class="card">
-    <h2>Configurações</h2>
-    <div class="settings-form">
-      <!-- ESQUERDA -->
-      <div class="form-left">
-        <label>Seu nome</label>
-        <input type="text" id="nameInput">
-
-        <label>Senha<span class="change">Mudar</span></label>
-        <input type="password" id="passwordInput">
-
-        <label>Email<span class="change">Mudar</span></label>
-        <input type="email" id="emailInput">
+  
+  <!-- PERFIL CARD -->
+  <div class="card" id="perfilCard">
+    <div class="card-inner">
+      <div class="profile-card">
+        <h2 class="perfil-title">Seu Perfil</h2>
+       <div class="banner">
+<div class="avatar perfil-avatar">
+  <img src="images/Perfil/usuario-removebg-preview.png" alt="Foto de Perfil" class="profile-img">
+</div>
+<button class="edit-btn" onclick="abrirConfiguracoes()">Editar Perfil</button>
+</div>
+        <div class="info">
+          <br>
+          <div class="name">Nome</div>
+          <div class="bio">Bibliografia</div>
+        </div>
+        
+        <h2>Jogos Favoritos</h2>
+        <div class="favorites">
+          <div class="fav"><span class="star">★</span></div>
+          <div class="fav"><span class="star">★</span></div>
+          <div class="fav"><span class="star">★</span></div>
+        </div>
       </div>
-
-      <!-- DIREITA -->
-      <div class="form-right">
-        <img id="previewImage" src="images/Perfil/perfil-de-usuario.png" class="avatar">
-        <input type="file" id="imageUpload" accept="image/*" style="display:none;">
-        <button class="upload-btn" onclick="document.getElementById('imageUpload').click()">Upload a picture</button>
-      </div>
-    </div>
-
-    <!-- DELETE -->
-    <div class="delete-account">
-      <a href="#" id="deleteAccount">Deletar sua conta</a>
-     </div>
-
-    <!-- BOTÕES -->
-    <div class="buttons">
-      <button class="btn-secondary" onclick="cancelEdit()">Cancelar</button>
-      <button class="btn-primary" id="saveBtn">Salvar</button>
     </div>
   </div>
 
-  <!-- Notificação ao excluir conta -->
-  <div id="notification" style="display:none; text-align:center; margin-top:20px; color:rgb(251, 188, 61); font-weight:bold;">
-    Conta excluída com sucesso! Redirecionando...
+  <!-- CONFIGURAÇÕES CARD -->
+  <div class="card hidden" id="configCard">
+    <div class="card-inner">
+      <div class="profile-card">
+        <h2 class="perfil-title">Configurações</h2>
+
+        <!-- Banner -->
+        <div class="banner" id="bannerPreview">
+          <button class="edit-btn banner-btn" onclick="document.getElementById('bannerUpload').click()">Editar capa</button>
+          <input type="file" id="bannerUpload" accept="image/*" class="hidden">
+        </div>
+
+        <div class="perfil-container">
+          <!-- Coluna esquerda -->
+          <div class="perfil-info">
+            <div class="avatar config-avatar">
+              <img src="images/Perfil/usuario-removebg-preview.png" alt="Foto de Perfil" id="photoPreview">
+            </div>
+            <button class="edit-btn" onclick="document.getElementById('photoUpload').click()">Editar foto</button>
+            <input type="file" id="photoUpload" accept="image/*" class="hidden">
+            
+            <textarea id="bioInput" placeholder="Escreva aqui sua bibliografia..."></textarea>
+          </div>
+
+          <!-- Coluna direita -->
+          <div class="forms-container">
+            <label>Nome</label>
+            <input type="text" id="nomeInput">
+            <label>Email</label>
+            <input type="email" id="emailInput">
+            <label>Senha</label>
+            <input type="password" id="senhaInput">
+
+            <!-- Botões -->
+            <div class="form-buttons">
+              <button class="btn descartar" onclick="cancelarEdicao()">Descartar</button>
+              <button class="btn salvar" onclick="salvarEdicao()">Salvar</button>
+            </div>
+            <button class="btn excluir" onclick="confirmarExclusao()">Excluir Conta</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL CONFIRMAÇÃO -->
+    <div id="modalConfirm" class="hidden modal-overlay">
+      <div class="modal-box">
+        <p>Tem certeza de que deseja excluir sua conta? Este é um procedimento irreversível.</p>
+        <div class="modal-buttons">
+          <button onclick="fecharModal()">Voltar</button>
+          <button onclick="excluirConta()">Excluir Conta</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="js/Perfil.js"></script>
