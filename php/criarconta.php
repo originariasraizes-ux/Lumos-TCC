@@ -1,13 +1,7 @@
 <?php
-session_start(); // Inicia ou recupera a sessão
-
-// Verifica se o usuário está logado
-if(!isset($_SESSION['idUsuario'])){
-    header("Location: /Lumos-TCC-main/php/login.php"); // Redireciona para a página de login
-    exit();
+session_start(); 
+if(!isset($_SESSION['idUsuario'])){  
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

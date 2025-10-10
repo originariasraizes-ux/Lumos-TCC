@@ -31,7 +31,21 @@ $nome = $_SESSION['nomeUsuario'] ?? '';
       <a href="/Lumos-TCC-main/php/CienciasHumanas.php">Ciências Humanas e Letras</a>
       <a href="/Lumos-TCC-main/php/CienciasExatas.php">Ciências Exatas</a>
       <a href="/Lumos-TCC-main/php/IdiomasComunicacao.php">Idiomas e Comunicação</a>
-      <a href="Dashboard.html">Dashboard</a>
+         <?php
+     $dashboardLink = '/Lumos-TCC-main/dashboard/Aluno.html'; 
+    if (isset($_SESSION['tipo'])) {
+    switch ($_SESSION['tipo']) {
+        case 'aluno':
+            $dashboardLink = '/Lumos-TCC-main/dashboard/Aluno.html';
+            break;
+        case 'professor':
+            $dashboardLink = '/Lumos-TCC-main/dashboard/Professor.html';
+            break;
+    }
+}      
+      ?>
+      
+  <a href="<?php echo $dashboardLink; ?>">Dashboard</a>
     </nav>
   </div>
 
@@ -164,12 +178,10 @@ $nome = $_SESSION['nomeUsuario'] ?? '';
         <button type="button" class="btn descartar" onclick="cancelarEdicao()">Descartar</button>
         <button type="submit" class="btn salvar">Salvar</button>
       </div>
-                  <button class="btn excluir" onclick="confirmarExclusao()">Excluir Conta</button>
+      <button type="button" class="btn excluir" onclick="confirmarExclusao()">Excluir Conta</button>
     </div>
   </div>
-</form>
-
-
+   </form>
     <!-- MODAL CONFIRMAÇÃO -->
     <div id="modalConfirm" class="hidden modal-overlay">
       <div class="modal-box">
