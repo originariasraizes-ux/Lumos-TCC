@@ -55,3 +55,5 @@ filterBtn.onclick = () => {
 function toggleOption(element) {
   element.classList.toggle('active');
 }
+
+ 

@@ -145,6 +145,7 @@ h3{
   color: #6c47a0;
 }
 
+
 /* Dropdown */
 .dropdown {
   position: relative;
@@ -152,12 +153,13 @@ h3{
 
 .dropbtn {
   cursor: pointer;
-  color: #7e62a4;
+  color: #6c47a0;
   text-decoration: none;
 }
 
+/* por padrão escondido */
 .dropdown-content {
-  display: none;
+  display: none;          /* escondido por padrão */
   position: absolute;
   top: 120%;
   left: 0;
@@ -167,8 +169,20 @@ h3{
   box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
   z-index: 10;
   flex-direction: column;
+  opacity: 0;
+  transform-origin: top;
+  transition: opacity .18s ease, transform .18s ease;
+  transform: translateY(-6px);
 }
 
+/* ao abrir */
+.dropdown.show .dropdown-content {
+  display: flex;          /* flex para coluna funcionar */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* links */
 .dropdown-content a {
   padding: 10px 15px;
   text-decoration: none;
@@ -178,12 +192,8 @@ h3{
 }
 
 .dropdown-content a:hover {
-  background: #9d72da;
+  background: #6c47a0;
   color: #fff;
-}
-
-.dropdown:hover .dropdown-content {
-  display: flex;
 }
 
 /* Ícones */

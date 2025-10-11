@@ -37,3 +37,18 @@ function toggleFavorite() {
     favBtn.style.backgroundColor = '#8ec3cc';
   }
 }
+// JavaScript: abre/fecha ao clicar
+document.addEventListener('click', function(event) {
+  const dropdown = document.querySelector('.dropdown');
+  const btn = dropdown.querySelector('.dropbtn');
+  const content = dropdown.querySelector('.dropdown-content');
+
+  // Se clicou no botão, alterna o menu
+  if (btn.contains(event.target)) {
+    dropdown.classList.toggle('show');
+  } 
+  // Se clicou fora, fecha
+  else if (!content.contains(event.target)) {
+    dropdown.classList.remove('show');
+  }
+});
