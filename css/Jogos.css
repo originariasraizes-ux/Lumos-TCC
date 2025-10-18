@@ -2,10 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
 :root {
-  --orange: #f9ba60;
-  --pink: #e9768f;
-  --black: #1d1c1c;
-  --white: #fff;
+  
   --light-color: #666;
   --box-shadow: 0 .5rem 1.5rem #eee0c7;
 }
@@ -52,9 +49,6 @@ p {
   font-family: 'League Spartan', sans-serif;
 }
 
-.destaque1 { background: #efa019; font-weight: bold; }
-.destaque2 { background: #910157; font-weight: bold; }
-.destaque3 { background: #8ec3cc; font-weight: bold; }
 
 .onda{
   position: absolute;
@@ -210,7 +204,7 @@ p {
     font-size: 15px;
     cursor: pointer;
     display: block;
-    margin: 15px auto;
+    margin: 5px;
 }
 
 /* ===== IMAGENS EM CONTEÚDO ===== */
@@ -430,11 +424,11 @@ footer {
 
 .fav-star {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 50px;
+  top: -2px;
+  left: -15px;
+  width: 70px;
   z-index: 5;
-  right: 5px;
+
 }
 
 .buttons {

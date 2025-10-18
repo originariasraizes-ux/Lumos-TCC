@@ -55,5 +55,11 @@ filterBtn.onclick = () => {
 function toggleOption(element) {
   element.classList.toggle('active');
 }
-
- 
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.getElementById('menuToggle'); // Seleciona pelo id
+  const sidebar = document.querySelector('.sidebar');
+  
+  menuToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+  });
+});
