@@ -26,7 +26,7 @@ body {
   background-color: #ffb94d;
   display: flex;
   margin: 0;
-  height: 100vh;
+
 }
 
 h2{
@@ -88,38 +88,38 @@ h3{
   margin-bottom: 40px; 
 }
 
-/* CARD */
+/*CARD PRINCIPAL*/
 .card {
   flex: 1;
   display: flex;
-  justify-content: center;
-  padding: 10px; /* mantém margem de 10px */
-  margin-top: 30px;
-  width: 80%;               /* ocupa 90% da largura disponível (deixa margem lateral) */
-  height: 90vh;  
-    background-color: #fbf6ed;
-    margin-right: 30px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0; /* remover padding interno do card branco */
+  margin: 30px; /* mantém a margem externa do card na página */
+  width: calc(80% - 60px); /* ajusta largura para considerar a margem externa */
+  background: #fff;
+  border-radius: 30px;
+  box-sizing: border-box;
+  height: calc(100vh - 60px);
 }
 
 .card-inner {
+  flex: 1;
   background-color: #fbf6ed;
-  border-radius: 30px; /* deixa todos os lados bem arredondados */
-  width: calc(100% - 20px); /* 10px de margem de cada lado */
-  height: 100vh; /* 10px de margem superior/inferior */
-  padding: 20px;
-  overflow-y: auto;
-  position: relative;
-  box-sizing: border-box; /* inclui padding na largura/altura */
-
-  max-height: 100vh;  /* garante que o card nunca ultrapasse a tela */
-  overflow-y: auto;   /* mantém rolagem apenas se necessário */
-
-
+  border-radius: 30px;
+  margin: 10px;       /* margem igual para todos os lados */
+  padding: 20px;      /* espaço interno */
+  overflow-y: auto;   /* habilita scroll */
+  box-sizing: border-box;
+  max-height: none;   /* remove limite de altura */
 }
+
+
+
 
 /* PERFIL */
 .profile-card {   background-color: #fbf6ed;; border-radius: 20px; width: 100%; height: 100%; position: relative; }
-.perfil-title { color: #e18c1e; font-size: 24px; font-weight: 600; margin-bottom: 20px; text-align: left; }
+.perfil-title { color: #e18c1e; font-size: 24px; font-weight: 600; margin-bottom: 10px; margin-top: 10px; text-align: left; }
 
 /* ===== BANNER ===== */
 .banner {
@@ -242,77 +242,96 @@ h3{
 
 /**CARDS JOGOS**/
 
-    .cards-container{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:2rem;
-      margin:3rem auto;
-      max-width:1100px;
-      padding:0 2rem;
-      
-    }
+   /** ===== CARDS DE JOGOS (isolados do card principal) ===== **/
 
-    /* CARD */
-    .card{
-      background:#fff;
-      border-radius:var(--card-radius);
-      box-shadow:0 4px 12px rgba(0,0,0,.1);
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      transition:transform .3s ease;
-    }
-    .card:hover{ transform:translateY(-5px); }
-
-  
-    .card-img{
-      padding:var(--img-pad);    
-      box-sizing:border-box;       
-    }
-    .card-img img{
-      width:100%;
-      height:var(--img-h);         
-      object-fit:cover;           
-      border-radius:var(--img-radius);
-      display:block;               
-      border:0;                    
-    }
-
-    /* CONTEÚDO */
-    .card-content{
-      padding:1.5rem;
-      text-align:center;
-      
-    }
-   .card-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: .5rem;
-  color: #444;
-  text-align: left;
-   padding: 0;          /* remove o espaço interno do card */
-  margin: 0; 
+.cards-jogos {
+  display: grid;
+  gap: 2rem;
+  margin: 1.5rem auto;
+  max-width: 1100px;
+  padding: 0 2rem;
+  grid-template-columns: 1fr; /* 1 coluna no mobile */
+  justify-items: center;
 }
 
-    .card-content p{
-      font-size:1rem;
-      color:#777;
-      margin-bottom:1rem;
-    }
-    .btn{
-      display:inline-block;
-      background:#8ec3cc;
-      color:#fff;
-      padding:.7rem 1.2rem;
-      border-radius:8px;
-      text-decoration:none;
-      transition:background .3s ease;
-    }
-    .btn:hover{ background:#5695a0; }
-    @media (min-width: 1024px) {
-  .cards-container {
+/* Cada card de jogo */
+.card-jogo {
+  width: 100%;
+  max-width: 250px;
+  aspect-ratio: 2 / 2; /* força o formato quadrado */
+  background: #fff;
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 12px rgba(125, 92, 0, 0.1);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  transition: transform .3s ease;
+}
+
+.card-jogo:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagem */
+.card-img {
+  padding: var(--img-pad);       /* cria espaço interno entre a imagem e o card */
+  box-sizing: border-box;        /* garante que o padding não aumente o tamanho total */
+}
+
+.card-img img {
+  width: 100%;
+  height: var(--img-h);         
+  object-fit: cover;           
+  border-radius: var(--img-radius); /* mantém cantos arredondados da imagem */
+  display: block;               
+  border: 0;                    
+}
+
+/* Conteúdo */
+.card-jogo .card-content {
+  padding: 1rem;
+  text-align: left;
+  background: transparent;
+}
+
+.card-jogo .card-content h3 {
+  font-size: 15px;
+  margin: 0 0 .4rem 0;
+  color: #444;
+}
+
+.card-jogo .card-content p {
+  font-size: 13px;
+  color: #777;
+  margin: 0 0 .8rem 0;
+}
+
+.card-jogo .btn {
+  display: inline-block;
+  background: #8ec3cc;
+  color: #fff;
+  padding: .6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background .3s ease;
+}
+.card-jogo .btn:hover {
+  background: #5695a0;
+}
+
+/* Responsividade */
+@media (min-width: 600px) {
+  .cards-jogos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-jogos {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 /* ===== AVATAR NAS CONFIGURAÇÕES ===== */
 .config-avatar {
   width: 120px;
