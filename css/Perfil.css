@@ -257,8 +257,9 @@ h3{
 /* Cada card de jogo */
 .card-jogo {
   width: 100%;
-  max-width: 250px;
-  aspect-ratio: 2 / 2; /* força o formato quadrado */
+  max-width: 300px;       /* aumenta a largura */
+   height: 320px; 
+  aspect-ratio: 1 / 1;    /* quadrado, mas você pode mudar para 4/3 se quiser mais alto */
   background: #fff;
   border-radius: var(--card-radius);
   box-shadow: 0 4px 12px rgba(125, 92, 0, 0.1);
@@ -267,6 +268,7 @@ h3{
   grid-template-rows: 1fr auto;
   transition: transform .3s ease;
 }
+
 
 .card-jogo:hover {
   transform: translateY(-5px);
@@ -295,8 +297,10 @@ h3{
 }
 
 .card-jogo .card-content h3 {
+
   font-size: 15px;
-  margin: 0 0 .4rem 0;
+  margin: 0 0 .2rem 0;
+  margin-top: 1px;;
   color: #444;
 }
 
@@ -314,6 +318,7 @@ h3{
   border-radius: 8px;
   text-decoration: none;
   transition: background .3s ease;
+  margin-bottom: 2px;
 }
 .card-jogo .btn:hover {
   background: #5695a0;
