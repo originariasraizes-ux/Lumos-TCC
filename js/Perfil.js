@@ -59,3 +59,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.getElementById('menuToggle'); // Seleciona pelo id
   const sidebar = document.querySelector('.sidebar');
 });
+
+function toggleMenu(el) {
+  const menu = el.querySelector('.menu-options');
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+function desfavoritar(btn) {
+  const card = btn.closest('.card-jogo');
+  const star = card.querySelector('.fav-star');
+  star.style.display = 'none'; // esconde a estrela
+  btn.parentElement.style.display = 'none'; // fecha o menu
+}

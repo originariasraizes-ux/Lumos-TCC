@@ -267,6 +267,7 @@ h3{
   display: grid;
   grid-template-rows: 1fr auto;
   transition: transform .3s ease;
+   position: relative;
 }
 
 
@@ -307,7 +308,7 @@ h3{
 .card-jogo .card-content p {
   font-size: 13px;
   color: #777;
-  margin: 0 0 .8rem 0;
+  margin: 1px;
 }
 
 .card-jogo .btn {
@@ -336,6 +337,52 @@ h3{
     grid-template-columns: repeat(4, 1fr);
   }
 }
+.fav-star {
+  position: absolute;
+  top: 1px;    /* menor valor = mais pra cima */
+  left: 0px;   /* maior valor = mais pra direita */
+  width: 40px;
+  z-index: 5;
+  cursor: pointer;
+}
+
+
+.card-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 6;
+  color: #ad6c04;
+
+}
+
+.menu-options {
+  display: none;
+  position: absolute;
+  top: 25px;
+  right: 0;
+  background: #fff7e6;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.menu-options button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  width: 100%;
+  text-align: left;
+   font-family: 'Poppins', sans-serif;
+   color: #ad6c04;
+}
+
+.menu-options button:hover {
+  background: #ffe9bc;
+}
+
 
 /* ===== AVATAR NAS CONFIGURAÇÕES ===== */
 .config-avatar {
