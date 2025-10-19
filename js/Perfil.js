@@ -71,3 +71,31 @@ function desfavoritar(btn) {
   star.style.display = 'none'; // esconde a estrela
   btn.parentElement.style.display = 'none'; // fecha o menu
 }
+// Dropdown menu responsivo
+function toggleDropdown() {
+  document.querySelector('.dropdown').classList.toggle('show');
+}
+
+// Fecha o dropdown se clicar fora
+window.addEventListener('click', function(e) {
+  if (!e.target.matches('.dropdown-btn')) {
+    const dropdown = document.querySelector('.dropdown');
+    if (dropdown.classList.contains('show')) {
+      dropdown.classList.remove('show');
+    }
+  }
+});
+
+function toggleDropdown() {
+  document.querySelector('.dropdown').classList.toggle('show');
+}
+
+window.addEventListener('click', function(e) {
+  if (!e.target.matches('.dropdown-btn')) {
+    const dropdown = document.querySelector('.dropdown');
+    if (dropdown.classList.contains('show')) {
+      dropdown.classList.remove('show');
+    }
+  }
+});
+

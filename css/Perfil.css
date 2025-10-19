@@ -552,10 +552,205 @@ h3{
 /* UTILITÁRIOS */
 .hidden { display: none; }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .card-inner { width: 95vw; height: auto; }
-  .form-buttons { flex-direction: column; gap: 10px; }
-  .edit-btn { width: 100%; text-align: center; }
-  .perfil-container { flex-direction: column; gap: 20px; }
+/* ===== ESTADO PADRÃO (mobile) ===== */
+.dropdown {
+  display: block;
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 999;
 }
+
+/* Esconde a navbar no mobile */
+.sidebar .navbar {
+  display: none;
+}
+
+/* ===== A PARTIR DE 768PX ===== */
+@media (min-width: 768px) {
+  /* Some o dropdown */
+  .dropdown {
+    display: none;
+  }
+
+  /* Mostra a navbar normalmente */
+  .sidebar .navbar {
+    display: block;
+  }
+}
+
+/* ===== ESTILO VISUAL DO DROPDOWN ===== */
+.dropdown-btn {
+  background-color: #f7c868;
+  color: #5d3d0a;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  transition: background 0.3s ease;
+}
+
+.dropdown-btn:hover {
+  background-color: #ffde9c;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  background-color: #fff7e6;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  overflow: hidden;
+  animation: fadeIn 0.25s ease;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #5d3d0a;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #ffe9bc;
+}
+
+/* Mostra o conteúdo quando o menu está ativo */
+.dropdown.show .dropdown-content {
+  display: block;
+}
+/* =========================
+   RESPONSIVIDADE GERAL
+========================= */
+
+/* MOBILE FIRST - até 767px */
+body {
+  flex-direction: column;
+}
+
+.sidebar {
+  display: none; /* some a sidebar no mobile */
+}
+
+/* Mostra apenas o dropdown no mobile */
+.dropdown {
+  display: block;
+  position: fixed;
+  top: 15px;
+  right: 25px;
+  z-index: 1000;
+}
+
+/* Corrige o layout do card principal no mobile */
+.card {
+  width: 100%;
+  margin: 10px;
+  border-radius: 20px;
+  height: auto;
+}
+
+/* Ajusta avatar e banner no mobile */
+.banner {
+  height: 100px;
+}
+.perfil-avatar {
+  width: 100px;
+  height: 100px;
+}
+
+/* Cards de jogos ficam em 1 coluna */
+.cards-jogos {
+  grid-template-columns: 1fr;
+}
+
+/* ============ DROPDOWN ============ */
+.dropdown-btn {
+  background-color: #f7c868;
+  color: #5d3d0a;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  transition: background 0.3s ease;
+}
+.dropdown-btn:hover {
+  background-color: #ffde9c;
+}
+
+/* Container dos links */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background-color: #fff7e6;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 220px;
+  overflow: hidden;
+  animation: fadeIn 0.25s ease;
+}
+.dropdown-content a {
+  display: block;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: #5d3d0a;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+.dropdown-content a:hover {
+  background-color: #ffe9bc;
+}
+
+/* Mostra o dropdown quando ativo */
+.dropdown.show .dropdown-content {
+  display: block;
+}
+
+/* =========================
+   A PARTIR DE 768px (DESKTOP)
+========================= */
+@media (min-width: 768px) {
+  body {
+    flex-direction: row;
+  }
+
+  /* Mostra sidebar e esconde dropdown */
+  .sidebar {
+    display: flex;
+  }
+  .dropdown {
+    display: none;
+  }
+
+  .card {
+    width: calc(100% - 320px);
+    margin: 30px;
+    height: calc(100vh - 60px);
+  }
+
+  /* Cards de jogos em 2 colunas */
+  .cards-jogos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   A PARTIR DE 1024px (TELAS GRANDES)
+========================= */
+@media (min-width: 1024px) {
+  .cards-jogos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
