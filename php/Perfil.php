@@ -90,55 +90,103 @@ $nome = $_SESSION['nomeUsuario'] ?? '';
     <div class="filter-option" onclick="toggleOption(this)">Comunicação</div>
   </div>
 </div>
-      <section class="cards-container">
+      <section class="cards-jogos">
+   
+  <div class="card-jogo">
   
-  <div class="card">
-    <div class="card-img">
-      <img src="/Lumos-TCC-main/images/jogos/planetas.PNG" alt="Jogo 1">
-    </div>
-    <div class="card-content">
-      <h3>Descobrindo os Planetas do Sistema Solar</h3>
-      <p>Ensino fundamental II - Sexta série</p>
-      <a href="Jogos.html" class="btn">Ver mais</a>
+  <!-- Estrela de favorito -->
+   <img src="/Lumos-TCC-main/images/Perfil/image-removebg-preview.png" alt="Favorito" class="fav-star" style="display:block;">
+
+  <!-- Três pontinhos -->
+  <div class="card-menu" onclick="toggleMenu(this)">⋮
+    <div class="menu-options">
+      <button onclick="desfavoritar(this)">Desfavoritar</button>
     </div>
   </div>
 
-  <div class="card">
+  <!-- Imagem do jogo -->
+  <div class="card-img">
+    <img src="/Lumos-TCC-main/images/jogos/planetas.PNG" alt="Jogo 1">
+  </div>
+
+  <!-- Conteúdo do card -->
+  <div class="card-content">
+    <h3>Descobrindo os Planetas do Sistema Solar</h3>
+    <p>Ensino fundamental II - Sexta série</p>
+    <a href="/Lumos-TCC-main/php/Jogos.php" class="btn">Ver mais</a>
+  </div>
+
+</div>
+
+
+<div class="card-jogo">
+   
+  <!-- Estrela de favorito -->
+   <img src="/Lumos-TCC-main/images/Perfil/image-removebg-preview.png" alt="Favorito" class="fav-star" style="display:block;">
+
+  <!-- Três pontinhos -->
+  <div class="card-menu" onclick="toggleMenu(this)">⋮
+    <div class="menu-options">
+      <button onclick="desfavoritar(this)">Desfavoritar</button>
+    </div>
+  </div>
     <div class="card-img">
       <img src="/Lumos-TCC-main/images/jogos/Em desenvolvimento.png" alt="Jogo 2">
     </div>
     <div class="card-content">
       <h3>Jogo 2</h3>
       <p>Descrição do jogo aqui</p>
-      <a href="Jogo.html" class="btn">Ver mais</a>
+      <a href="/Lumos-TCC-main/php/Jogos.php" class="btn">Ver mais</a>
     </div>
   </div>
-  
-  <div class="card">
+
+<div class="card-jogo">
+   
+  <!-- Estrela de favorito -->
+   <img src="/Lumos-TCC-main/images/Perfil/image-removebg-preview.png" alt="Favorito" class="fav-star" style="display:block;">
+
+  <!-- Três pontinhos -->
+  <div class="card-menu" onclick="toggleMenu(this)">⋮
+    <div class="menu-options">
+      <button onclick="desfavoritar(this)">Desfavoritar</button>
+    </div>
+  </div>
     <div class="card-img">
       <img src="/Lumos-TCC-main/images/jogos/Em desenvolvimento.png" alt="Jogo 2">
     </div>
     <div class="card-content">
       <h3>Jogo 3</h3>
       <p>Descrição do jogo aqui</p>
-      <a href="Jogo.html" class="btn">Ver mais</a>
+      <a href="/Lumos-TCC-main/php/Jogos.php" class="btn">Ver mais</a>
     </div>
   </div>
   
-  <div class="card">
+ <div class="card-jogo">
+   
+  <!-- Estrela de favorito -->
+   <img src="/Lumos-TCC-main/images/Perfil/image-removebg-preview.png" alt="Favorito" class="fav-star" style="display:block;">
+
+  <!-- Três pontinhos -->
+  <div class="card-menu" onclick="toggleMenu(this)">⋮
+    <div class="menu-options">
+      <button onclick="desfavoritar(this)">Desfavoritar</button>
+    </div>
+  </div>
     <div class="card-img">
       <img src="/Lumos-TCC-main/images/jogos/Em desenvolvimento.png" alt="Jogo 2">
     </div>
     <div class="card-content">
       <h3>Jogo 4</h3>
       <p>Descrição do jogo aqui</p>
-      <a href="Jogo.html" class="btn">Ver mais</a>
+      <a href="/Lumos-TCC-main/php/Jogos.php" class="btn">Ver mais</a>
     </div>
   </div>
+<br>
 
       </div>
     </div>
   </div>
+  </section>
 
 
   <!-- CONFIGURAÇÕES CARD -->
@@ -170,7 +218,7 @@ $nome = $_SESSION['nomeUsuario'] ?? '';
       <label>Nome</label>
       <input type="text" id="nomeInput" name="nome">
       <label>Email</label>
-      <input type="email" id="emailInput" name="email">
+      <input type="email" idhp="emailInput" name="email">
       <label>Senha</label>
       <input type="password" id="senhaInput" name="senha">
 
