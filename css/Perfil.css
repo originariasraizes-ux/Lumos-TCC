@@ -257,8 +257,8 @@ h3{
 /* Cada card de jogo */
 .card-jogo {
   width: 100%;
-  max-width: 300px;       /* aumenta a largura */
-   height: 320px; 
+  max-width: 180px;       /* aumenta a largura */
+   height: 200px; 
   aspect-ratio: 1 / 1;    /* quadrado, mas você pode mudar para 4/3 se quiser mais alto */
   background: #fff;
   border-radius: var(--card-radius);
@@ -292,7 +292,7 @@ h3{
 
 /* Conteúdo */
 .card-jogo .card-content {
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: left;
   background: transparent;
 }
@@ -301,7 +301,6 @@ h3{
 
   font-size: 15px;
   margin: 0 0 .2rem 0;
-  margin-top: 1px;;
   color: #444;
 }
 

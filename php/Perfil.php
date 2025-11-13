@@ -1,12 +1,33 @@
 
 <?php
 session_start();
+include 'db.php'; // não esqueça de incluir a conexão com o banco
 
-if(!isset($_SESSION['idUsuario'])){
-    header("Location: /Lumos-TCC-main/php/login.php"); 
+if (!isset($_SESSION['idUsuario'])) {
+    header("Location: /Lumos-TCC-main/php/login.php");
     exit();
 }
+
+$idUsuario = $_SESSION['idUsuario'];
 $nome = $_SESSION['nomeUsuario'] ?? '';
+
+// Buscar jogos favoritos do usuário
+$sql = "SELECT j.* FROM tbJogos j
+        JOIN tbFavoritos f ON j.idJogos = f.idJogos
+        WHERE f.idUsuario = ?";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $idUsuario);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Guardar os jogos favoritos em um array
+$jogosFavoritos = [];
+while ($row = $result->fetch_assoc()) {
+    $jogosFavoritos[] = $row;
+}
+
+$stmt->close();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -91,96 +112,39 @@ $nome = $_SESSION['nomeUsuario'] ?? '';
   </div>
 </div>
       <section class="cards-jogos">
-   
-  <div class="card-jogo">
-  
-  <!-- Estrela de favorito -->
-   <img src="/Lumos-TCC-main/images/Perfil/image-removebg-preview.png" alt="Favorito" class="fav-star" style="display:block;">
+        <?php if (!empty($jogosFavoritos)): ?>
+          <?php foreach ($jogosFavoritos as $jogo): ?>
+            <div class="card-jogo" data-id-jogo="<?= $jogo['idJogos'] ?>">
+              <!-- Estrela de favorito -->
+              <img src="/Lumos-TCC-main/images/Perfil/image-removebg-preview.png" alt="Favorito" class="fav-star" style="display:block;">
 
-  <!-- Três pontinhos -->
-  <div class="card-menu" onclick="toggleMenu(this)">⋮
-    <div class="menu-options">
-      <button onclick="desfavoritar(this)">Desfavoritar</button>
+              <!-- Três pontinhos -->
+              <div class="card-menu" onclick="toggleMenu(this)">⋮
+               <div class="menu-options">
+                <button onclick="desfavoritar(this)">Desfavoritar</button>
+                  </div>
+              </div>
+
+              <!-- Imagem do jogo -->
+              <div class="card-img">
+                <img src="<?= htmlspecialchars($jogo['imagemJogo']) ?>" alt="<?= htmlspecialchars($jogo['nomeJogos']) ?>">
+              </div>
+
+              <!-- Conteúdo do card -->
+              <div class="card-content">
+                <h3><?= htmlspecialchars($jogo['nomeJogos']) ?></h3>
+                <a href="<?= htmlspecialchars($jogo['paginaJogo']) ?>" class="btn" target="_blank">Ver mais</a>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        <?php else: ?>
+          <p>Você ainda não favoritou nenhum jogo.</p>
+        <?php endif; ?>
+      </section>
     </div>
   </div>
-
-  <!-- Imagem do jogo -->
-  <div class="card-img">
-    <img src="/Lumos-TCC-main/images/jogos/planetas.PNG" alt="Jogo 1">
-  </div>
-
-  <!-- Conteúdo do card -->
-  <div class="card-content">
-    <h3>Descobrindo os Planetas do Sistema Solar</h3>
-    <p>Ensino fundamental II - Sexta série</p>
-    <a href="/Lumos-TCC-main/php/Jogos.php" class="btn">Ver mais</a>
-  </div>
-
 </div>
 
-
-<div class="card-jogo">
-   
-  <!-- Estrela de favorito -->
-   <img src="/Lumos-TCC-main/images/Perfil/image-removebg-preview.png" alt="Favorito" class="fav-star" style="display:block;">
-
-  <!-- Três pontinhos -->
-  <div class="card-menu" onclick="toggleMenu(this)">⋮
-    <div class="menu-options">
-      <button onclick="desfavoritar(this)">Desfavoritar</button>
-    </div>
-  </div>
-    <div class="card-img">
-      <img src="/Lumos-TCC-main/images/jogos/Em desenvolvimento.png" alt="Jogo 2">
-    </div>
-    <div class="card-content">
-      <h3>Jogo 2</h3>
-      <p>Descrição do jogo aqui</p>
-      <a href="/Lumos-TCC-main/php/Jogos.php" class="btn">Ver mais</a>
-    </div>
-  </div>
-
-<div class="card-jogo">
-   
-  <!-- Estrela de favorito -->
-   <img src="/Lumos-TCC-main/images/Perfil/image-removebg-preview.png" alt="Favorito" class="fav-star" style="display:block;">
-
-  <!-- Três pontinhos -->
-  <div class="card-menu" onclick="toggleMenu(this)">⋮
-    <div class="menu-options">
-      <button onclick="desfavoritar(this)">Desfavoritar</button>
-    </div>
-  </div>
-    <div class="card-img">
-      <img src="/Lumos-TCC-main/images/jogos/Em desenvolvimento.png" alt="Jogo 2">
-    </div>
-    <div class="card-content">
-      <h3>Jogo 3</h3>
-      <p>Descrição do jogo aqui</p>
-      <a href="/Lumos-TCC-main/php/Jogos.php" class="btn">Ver mais</a>
-    </div>
-  </div>
-  
- <div class="card-jogo">
-   
-  <!-- Estrela de favorito -->
-   <img src="/Lumos-TCC-main/images/Perfil/image-removebg-preview.png" alt="Favorito" class="fav-star" style="display:block;">
-
-  <!-- Três pontinhos -->
-  <div class="card-menu" onclick="toggleMenu(this)">⋮
-    <div class="menu-options">
-      <button onclick="desfavoritar(this)">Desfavoritar</button>
-    </div>
-  </div>
-    <div class="card-img">
-      <img src="/Lumos-TCC-main/images/jogos/Em desenvolvimento.png" alt="Jogo 2">
-    </div>
-    <div class="card-content">
-      <h3>Jogo 4</h3>
-      <p>Descrição do jogo aqui</p>
-      <a href="/Lumos-TCC-main/php/Jogos.php" class="btn">Ver mais</a>
-    </div>
-  </div>
 <br>
 
       </div>
@@ -218,7 +182,7 @@ $nome = $_SESSION['nomeUsuario'] ?? '';
       <label>Nome</label>
       <input type="text" id="nomeInput" name="nome">
       <label>Email</label>
-      <input type="email" idhp="emailInput" name="email">
+      <input type="email" id="emailInput" name="email">
       <label>Senha</label>
       <input type="password" id="senhaInput" name="senha">
 
@@ -236,12 +200,14 @@ $nome = $_SESSION['nomeUsuario'] ?? '';
         <p>Tem certeza de que deseja excluir sua conta? Este é um procedimento irreversível.</p>
         <div class="modal-buttons">
           <button onclick="fecharModal()">Voltar</button>
-          <button onclick="excluirConta()">Excluir Conta</button>
+          <button type="submit" onclick="excluirConta()">Excluir Conta</button>
         </div>
       </div>
     </div>
   </div>
     </div>
   <script src="/Lumos-TCC-main/js/Perfil.js"></script>
+  <script src="/Lumos-TCC-main/js/favoritos.js"></script>
+
 </body>
 </html>
