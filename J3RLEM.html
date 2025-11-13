@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo</title>
+
+  <link rel="stylesheet" href="css/JogosExatas.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+<div class="onda">
+  <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="#8e2f3f" fill-opacity="" 
+      d="M0,64L60,90.7C120,117,240,171,360,181.3C480,192,600,160,720,138.7C840,117,960,107,1080,128C1200,149,1320,203,1380,229.3L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+    </path>
+  </svg>
+</div>
+ <header class="header">
+    <a href="php/Homepage.php" class="logo">
+    <img src="images/Logos/LumosExatas.png" width="180px">
+    </a>
+
+   <nav class="navbar">
+      <div class="dropdown">
+          <a href="" class="dropbtn">Área de Conhecimento ▾</a>
+          <div class="dropdown-content">
+              <a href="php/CienciasNaturais.php">Ciências Naturais</a>
+              <a href="php/CienciasHumanas.php">Ciências Humanas</a>
+              <a href="php/CienciasExatas.php">Ciências Exatas </a>
+              <a href="php/IdiomasComunicacao.php">Idioma e Comunicação</a>
+          </div>
+        </div>
+</header>
+<section class="advinhePersonalidade">
+  <h1 style="color: #8e2f3f;" class="league-spartan">Kono</h1>
+
+  <div class="container">
+    <div class="img-container">
+      <img src="images/jogos/Kono.PNG" class="img" id="jogo-img">
+      <img src="images/Perfil/image-removebg-preview.png" alt="Favorito" class="fav-star" id="fav-star" style="display:none;">
+    </div>
+
+    <p style="color: #1e4d55;">O Kono é um jogo tradicional coreano de estratégia e raciocínio lógico, caracterizado por
+    movimentos verticais e horizontais que exigem planejamento e atenção. Seu objetivo é capturar ou bloquear todas as
+    peças do adversário, estimulando o pensamento tático e a análise de possibilidades. A simplicidade das regras torna o
+    jogo acessível, mas desafiador, promovendo a lógica e o foco durante as partidas. O jogo Kono contribui para o
+    desenvolvimento do raciocínio lógico, da memória de trabalho e da capacidade de antecipar ações, competências
+    fundamentais para a aprendizagem matemática.
+
+    </p>
+  </div>
+
+  <div class="buttons">
+    <button type="button" onclick="window.open('https://view.genially.com/68fa7bd4a2c0d45e3bc9cec9/interactive-content-kono  ', '_blank')">
+      Jogar
+    </button>
+
+    <button type="button" id="fav-btn" data-id-jogo="12">
+  <i class="far fa-star"></i> Favoritar
+</button>
+  </div>
+</section>
+   
+ <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <img src="images/Logos/logoLumos.png" class="logo-footer">
+        <p style="color:#fff;"></pstyle>O aprendizado é a chave para o futuro. Continue explorando, descobrindo e se superando</p>
+      </div>
+
+      <div class="footer-col">
+        <h3 style="color: #fff;">Sobre nós</h3>
+        <ul>
+          <li><a href="php/Homepage.php">Home</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="https://www.instagram.com/lumos.ensino/?igsh=cG04bzFmdjkyNWI%3D# ">Instagram</a></li>
+          <li><a href="Suporte.html">Contatos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 style="color:#fff;">Entre em Contato</h3>
+        <p style="color:#fff;">📍 Etec de Carapicuíba</p>
+        <p style="color:#fff;">✉️ Lumos@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p style="color:#fff; text-align: center;">Copyright © 2025 Lumos</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+  <script src="js/Conhecimento.js"></script>
+    <script src="js/favoritos.js"></script>
+</body>
+</html>
