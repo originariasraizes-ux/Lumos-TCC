@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Poppins', sans-serif;
+  background-color:#fbf6ed;
+  color:#111;
+  min-height:100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position:fixed;
+  left:0; top:0;
+  width:250px; height:100%;
+  background:#fbf6ed;
+  padding:20px;
+  box-shadow: 3px 0 10px rgba(205,130,10,0.25);
+  z-index:100;
+  transition: transform .25s ease;
+}
+.sidebar .logo img { width:100%; height:auto; margin-bottom:20px; }
+
+.navbar a {
+  display:block;
+  color:#efa019;
+  text-decoration:none;
+  padding:10px 5px;
+  margin-bottom:8px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:1.05rem;
+}
+.navbar a:hover { background:#efa019; color:#fbf6ed; }
+
+/* HAMBURGER */
+.hamburger {
+  display:none;
+  position:fixed; left:15px; top:15px;
+  z-index:999;
+  background:#fbf6ed; color:#efa019;
+  border:none; padding:8px 12px; border-radius:6px;
+  box-shadow:2px 2px 6px rgba(0,0,0,0.08);
+}
+
+/* MAIN */
+.main {
+  margin-left:250px;
+  padding:28px;
+  min-height:100vh;
+}
+
+/* HEADER */
+.header {
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:16px;
+  margin-bottom:22px;
+}
+
+.btn-criar-turma {
+  background: #f59f00;
+  color:#fff; border:none;
+  padding:10px 16px; border-radius:22px;
+  font-weight:700; cursor:pointer;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.04);
+}
+
+/* TURMAS */
+.turmas {
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  align-items:flex-start;
+}
+
+/* CARD */
+.turma-card {
+  width:220px;
+  padding:16px;
+  border-radius:12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  cursor:pointer;
+  position:relative;
+  color: #111;
+  transition: transform .18s ease;
+  background:#d0e5f5;
+}
+.turma-card:hover { transform: translateY(-6px); }
+
+.turma-card.pink { background-color:#7e62a4; color:white; }
+.turma-card.red { background-color:#9D304A; color:white; }
+.turma-card.orange { background-color:#efa019; color:white; }
+.turma-card.blue { background-color:#8ec3cc; color:white; }
+
+/* CARD HEADER */
+.card-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.card-header h3 { font-size:1.05rem; font-weight:700; }
+
+.menu-btn {
+  background:transparent; border:none; font-size:18px; color:inherit; cursor:pointer;
+}
+.menu-options {
+  display:none;
+  position:absolute;
+  top:44px; right:12px;
+  background:#fff; color:#333;
+  list-style:none; padding:6px 0;
+  border-radius:8px; border:1px solid #eee;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  z-index:50;
+  min-width:120px;
+}
+.menu-options li {
+  padding:10px 12px; cursor:pointer; font-weight:600; font-size:.95rem;
+  border-bottom:1px solid #f4f4f4;
+}
+.menu-options li:last-child { border-bottom:none; }
+.menu-options li:hover { background:#f7f7f7; }
+.menu-options.show { display:block; }
+
+.card-icon { font-size:30px; margin-top:10px; }
+
+/* TELA DA TURMA */
+.preview { padding:14px; margin-bottom:18px; }
+.turma-top { display:flex; justify-content:space-between; align-items:center; }
+
+/* ==== COM ATIVIDADES ==== */
+.com-atividades {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.mensagem-comtarefa {
+  flex: 0 0 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.mensagem-comtarefa p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.mensagem-comtarefa img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==== SEM ATIVIDADES ==== */
+.sem-atividades {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.sem-atividades .mensagem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.sem-atividades .mensagem p {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.sem-atividades .mensagem img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===== BOTÕES ===== */
+.btn-criar-tarefa {
+  background: #b34055;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+.btn-criar-tarefa:hover {
+  background: #910157;
+}
+
+/* ===== CONVITE ===== */
+.convite {
+  background:#b34055;
+  color:#fff;
+  padding:14px 16px;
+  border-radius:10px;
+  font-weight:700;
+  width: auto;
+  margin-top: 20px;
+}
+.codigo { display:flex; align-items:center; justify-content:space-between; margin-top:8px; }
+.codigo button { background:none; border:none; color:white; font-size:18px; cursor:pointer; }
+
+/* ===== LISTA DE TAREFAS ===== */
+.lista-tarefas {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) {
+  .hamburger { display:block; }
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.active { transform: translateX(0); }
+  .main { margin-left:0; padding:18px; }
+  .turmas { justify-content:center; }
+
+  .com-atividades {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mensagem-comtarefa,
+  .sem-atividades .mensagem {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .mensagem-comtarefa img,
+  .sem-atividades .mensagem img {
+    max-width: 80%;
+  }
+}
