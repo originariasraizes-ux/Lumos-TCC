@@ -48,10 +48,10 @@ $stmt->close();
       <img src="/Lumos-TCC-main/images/Logos/logoLumos.png" alt="Logo Lumos">
     </a>
     <nav class="navbar">
-      <a href="/Lumos-TCC-main/php/CienciasNaturais.php">Ciências Naturais, Saúde e Meio Ambiente</a>
-      <a href="/Lumos-TCC-main/php/CienciasHumanas.php">Ciências Humanas e Letras</a>
-      <a href="/Lumos-TCC-main/php/CienciasExatas.php">Ciências Exatas</a>
-      <a href="/Lumos-TCC-main/php/IdiomasComunicacao.php">Idiomas e Comunicação</a>
+      <a href="/Lumos-TCC-main/php/CienciasNaturais.php">Ciências Naturais</a>
+              <a href="/Lumos-TCC-main/php/CienciasHumanas.php">Linguagens e Ciências Humanas</a>
+              <a href="/Lumos-TCC-main/php/CienciasExatas.php">Raciocínio Lógico - Ensino Médio</a>
+              <a href="/Lumos-TCC-main/php/IdiomasComunicacao.php">Raciocínio Lógico - Ensino Fundamental</a>
          <?php
      $dashboardLink = '/Lumos-TCC-main/dashboard/Aluno.html'; 
     if (isset($_SESSION['tipo'])) {

@@ -31,10 +31,10 @@ session_start();
       <div class="dropdown">
           <a href="" class="dropbtn">Área de Conhecimento ▾</a>
           <div class="dropdown-content">
-              <a href="/Lumos-TCC-main/php/CienciasNaturais.php">Ciências Naturais</a>
-              <a href="/Lumos-TCC-main/php/CienciasHumanas.php">Ciências Humanas</a>
-              <a href="/Lumos-TCC-main/php/CienciasExatas.php">Ciências Exatas </a>
-              <a href="/Lumos-TCC-main/php/IdiomasComunicacao.php">Idioma e Comunicação</a>
+              <<a href="/Lumos-TCC-main/php/CienciasNaturais.php">Ciências Naturais</a>
+              <a href="/Lumos-TCC-main/php/CienciasHumanas.php">Linguagens e Ciências Humanas</a>
+              <a href="/Lumos-TCC-main/php/CienciasExatas.php">Raciocínio Lógico - Ensino Médio</a>
+              <a href="/Lumos-TCC-main/php/IdiomasComunicacao.php">Raciocínio Lógico - Ensino Fundamental</a>
           </div>
         </div>
        <?php
@@ -177,8 +177,8 @@ session_start();
         <h3 style="color: #fff;">Sobre nós</h3>
         <ul>
           <li><a href="/Lumos-TCC-main/php/Homepage.php">Home</a></li>
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Instagram</a></li>
+          
+          <li><a href="https://www.instagram.com/lumos.ensino/?igsh=cG04bzFmdjkyNWI%3D# " target="_blank" >Instagram</a></li>
           <li><a href="Suporte.html">Contatos</a></li>
         </ul>
       </div>
@@ -186,7 +186,7 @@ session_start();
       <div class="footer-col">
         <h3 style="color:#fff;">Entre em Contato</h3>
         <p>📍 Etec de Carapicuíba</p>
-        <p>✉️ Lumos@gmail.com</p>
+        <p>✉️suporte.projetolumos@gmail.com</p>
       </div>
     </div>
 
